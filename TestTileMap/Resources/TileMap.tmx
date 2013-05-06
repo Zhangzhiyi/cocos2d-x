@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="meta_tiles" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="meta_tiles.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collectable" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ZyQrCMBAG4Khg3etycIMScaMuff/HcwoeIto0mKSdSebwIUiw//zTnMyEEFlAtmBnYI8gq84BnMBN4wyOCLL+IpU56jKqZ6Tlc22ymma0OWOTwdV79RDf90C9N0+LOZqSi8+7cK/5noIC9EECBgjymLhUmIEUzDVnSldFm3MkFabvOSaaMyrTvUlPc6TKp41yb8WfGVzMtnZk46lnX3O7+A0KczJmQiLIwOjutannUIS9G+z5sHURc18xz86dM96pnxlj6KPpThnDTCLIEBIqfVLJSS0r9Y646/DwTsMS0z5NZu2ALugR7rv8/3EIRmDcchZbC7AEKwRZWLUXiZdeSRAnAAA=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="0" height="0">
+  <object name="SpawnPoint" x="45" y="337"/>
+  <object name="EnemySpawn" x="265" y="1073">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="649" y="623">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="844" y="177">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1097" y="1297">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1161" y="1233">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1097" y="1234">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1097" y="1360">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1224" y="1233">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1161" y="1298">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Foreground" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3aMQ0AAAzDsDIZf5Z7h6DHZEthkQS65gQAAAAAAAAAAHR9/nYWnQBaaRAnAAA=
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ZUQqAIBCE4a6k9z9c9CCIFBql7Uz/B9GLD7O7IoLb5iXd+CJTryNV/zZjrr52TeR6etmezGNV3Vf7R2VfFS511JSyFiNnkvI5NotCvQoZ3Sj0XCEjPLDXPK287+Jc9N5Ez4c42CsAAOAJ7hLvUumnSs6DUtavvNUjeu2HmXr50zxHap39rrqi36Pvwwqzd3rnzv0lsnYztydtECcAAA==
+  </data>
+ </layer>
+</map>
