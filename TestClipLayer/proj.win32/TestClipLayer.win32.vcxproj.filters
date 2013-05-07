@@ -55,6 +55,9 @@
     <ClInclude Include="..\Classes\ClipLayer.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="CCStyleLabel.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +70,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ClipLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="CCStyleLabel.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

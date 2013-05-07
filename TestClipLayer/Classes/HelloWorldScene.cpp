@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "ClipLayer.h"
-using namespace cocos2d;
+#include "CCStyleLabel.h"
+USING_NS_CC;
 
 CCScene* HelloWorld::scene()
 {
@@ -96,6 +97,7 @@ bool HelloWorld::init()
 		iconSprite->setPosition(ccp(clayer->getContentSize().width/2, clayer->getContentSize().height/2));
 		clayer->addChild(iconSprite, 2);
 
+		CCStyleLabel* styleLabel = CCStyleLabel::create("Testing A8 Format", "Marker Felt", 48);
         bRet = true;
     } while (0);
 
