@@ -17,7 +17,7 @@ function ScrollView:ctor(options)
 	self._container:setPosition(CCPointZero)
 	self:addChild(self._container)	
 	self._bBounceable = options.bounceable or true
-			
+	
 end
 function ScrollView:getContainer()
 	return self._container
@@ -56,10 +56,14 @@ function ScrollView:updateInset()
 	self._minInset = ccp(self._minInset.x - self._viewSize.width * INSET_RATIO,
 			self._minInset.y - self._viewSize.height * INSET_RATIO)
 end
+function ScrollView:isTouchMoved()
+	return self._bTouchMoved
+end
 function ScrollView:onTouchBegan(x, y)
 	if ((not self:isVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end
+	self._bTouchMoved = false
 	self._touchPoint = self._layer:convertToNodeSpace(ccp(x, y))
 	return true
 end
@@ -67,13 +71,23 @@ function ScrollView:onTouchMoved(x, y)
 	
 	local movePoint = self._layer:convertToNodeSpace(ccp(x, y))
 	local distancePoint = ccpSub(movePoint, self._touchPoint)
-	local dis = 0
+	local distance = 0
 	if self._nDirection == ScrollView.DIRECTION_VERTICAL then
 		distancePoint = ccp(0, distancePoint.y)
+		distance = distancePoint.y
 	elseif self._nDirection == ScrollView.DIRECTION_HORIZONTAL then
 		distancePoint = ccp(distancePoint.x ,0)
+		distance = distancePoint.x
+	end
+		
+	if not self._bTouchMoved and math.abs(distance) < 10 then
+		return
 	end
 	
+	if not self._bTouchMoved then
+		distancePoint = CCPointZero
+	end
+	self._bTouchMoved = true
 	self._touchPoint = movePoint
 	if self:isTouchInside(x, y) then
 		local newX = self._container:getPositionX() + distancePoint.x
@@ -100,8 +114,11 @@ function ScrollView:onTouchEnded(x, y)
 			self._container:runAction(move)
 		end
 	end
+	self._bTouchMoved = false
 end
-
+function ScrollView:onTouchCancelled(x, y)
+	self._bTouchMoved = false
+end
 function ScrollView:setContentOffset(pointOffset)
 	if not self._bBounceable then
 		local miniOffset = self:minContainerOffset()

@@ -3,8 +3,9 @@ TableView = class("TableView", ScrollView)
 function TableView:ctor(options)
 	TableView.super.ctor(self, options)
 	
-	self._cells = {}
-	self._cellPosition = {}
+	self._cells = {} --存储所有cell的表
+	self._cellPosition = {} --存储每一个cell的位置表
+	self._touchCell = nil --存储触摸选中的cell	
 end
 function TableView:updateCellPositions()
 	tableForClear(self._cellPosition)
@@ -78,7 +79,7 @@ function TableView:indexFromOffset(offset)
 end
 function TableView:halfFindIndex(hight, low, search) --二分查找
 	while (hight >= low) do
-		local mid = low + (hight - low)/2
+		local mid = low + math.floor((hight - low)/2)
 		local cellStart = self._cellPosition[mid]
 		local cellEnd = self._cellPosition[mid + 1]
 		if search >= cellStart and search <= cellEnd then
@@ -101,6 +102,11 @@ function TableView:tableCellAtIndex(index)
 	local cell = CCSprite:create("Icon.png")
 	return cell
 end
+function TableView:cellAtIndex(index)
+	if self._cells then
+		return self._cells[index]
+	end
+end
 function TableView:reloadData()
 	tableForClear(self._cells)
 	self:updateCellPositions()
@@ -114,13 +120,26 @@ function TableView:onTouchBegan(x, y)
 	if not self:isVisible() then
 		return
 	end
-	
+	local touchResult = TableView.super.onTouchBegan(self, x, y)
+	local point = self:getContainer():convertToNodeSpace(ccp(x, y))
+	local index = self:indexFromOffset(point)		
+	if index ~= -1 then
+		CCLuaLog("touch:" .. index)
+		self._touchCell = self:cellAtIndex(index)
+	end
+	return touchResult
 end
 function TableView:onTouchMoved(x, y)
-	
+	TableView.super.onTouchMoved(self, x, y)
+		
+
 end
 function TableView:onTouchEnded(x, y)
-
+	if not self:isVisible() then
+		return
+	end
+	
+	TableView.super.onTouchEnded(self, x, y)
 end
 function TableView:onTouchCancelled(x, y)
 

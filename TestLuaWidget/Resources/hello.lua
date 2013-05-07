@@ -11,6 +11,7 @@ require "widget/CheckBoxGroup"
 require "widget/ImageButton"
 require "widget/ProgressBar"
 require "widget/ScrollView"
+require "widget/TableView"
 
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)

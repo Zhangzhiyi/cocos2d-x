@@ -81,6 +81,10 @@ function TestSceneMan:ctor()
 	scrollView:setPosition(ccp(600, 300))
 	scrollView:setContainer(container._node)
 	self._mainLayer:addChild(scrollView._node)
-			
+	
+	local tableView = TableView.new({viewSize = CCSize(100, 200)})
+	tableView:setPosition(ccp(700, 300))
+	tableView:reloadData()
+	self._mainLayer:addChild(tableView._node)
 end
 return TestSceneMan

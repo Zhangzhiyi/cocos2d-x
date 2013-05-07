@@ -63,7 +63,7 @@ function ImageButton:onTouchBegan(x, y)
 	return true
 end
 function ImageButton:onTouchMoved(x, y)
-
+	
 end
 function ImageButton:onTouchEnded(x, y)
 	self:setPressed(false)
