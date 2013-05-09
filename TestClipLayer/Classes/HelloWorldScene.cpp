@@ -97,7 +97,13 @@ bool HelloWorld::init()
 		iconSprite->setPosition(ccp(clayer->getContentSize().width/2, clayer->getContentSize().height/2));
 		clayer->addChild(iconSprite, 2);
 
-		CCStyleLabel* styleLabel = CCStyleLabel::create("Testing A8 Format", "Marker Felt", 48);
+		CCStyleLabel* styleLabel = CCStyleLabel::create("HelloWorld!", "Marker Felt", 24);
+		styleLabel->setIsTouch(true);
+		styleLabel->setTouchPriority(-129);
+		styleLabel->setPosition(ccp(clayer->getContentSize().width/2, clayer->getContentSize().height/2));
+		clayer->addChild(styleLabel, 2);
+		
+		
         bRet = true;
     } while (0);
 
