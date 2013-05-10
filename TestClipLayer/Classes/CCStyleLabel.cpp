@@ -13,6 +13,18 @@ CCStyleLabel::CCStyleLabel(void)
 CCStyleLabel::~CCStyleLabel(void)
 {
 }
+void CCStyleLabel::setLineColor(ccColor4F lineColor)
+{
+	m_lineColor = lineColor;
+}
+void CCStyleLabel::setLineWidth(float lineWidth)
+{
+	m_fLineWidth = lineWidth;
+}
+void CCStyleLabel::setDrawBottomLine(bool enable)
+{
+	m_bDrawBottomLine = enable;
+}
 //CCStyleLabel* CCStyleLabel::create(void)
 //{
 //	CCStyleLabel * pRet = new CCStyleLabel();
@@ -92,6 +104,7 @@ bool CCStyleLabel::isTouchEnabled()
 }
 void CCStyleLabel::setTouchEnabled(bool enabled)
 {
+		m_bTouchEnabled =enabled;
 		if (m_bRunning)
 		{
 			if (enabled)
