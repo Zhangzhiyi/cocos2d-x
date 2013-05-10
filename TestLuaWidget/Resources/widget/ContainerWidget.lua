@@ -78,7 +78,7 @@ function ContainerWidget:alignItemsHorizontally()
 				if height > maxHeight then
 					maxHeight = height
 				end
-				nTotalWidth = nTotalWidth + child:getContentSize().Width + nPadding
+				nTotalWidth = nTotalWidth + child:getContentSize().width + nPadding
 			end
 		end
 	end
@@ -90,9 +90,9 @@ function ContainerWidget:alignItemsHorizontally()
 			if child then
 				child:setAnchorPoint(ccp(0, 0))
 				child:setPosition((i + 1) * nPadding + nItemWidth, 0)
-				nItemWidth = nItemWidth + child:getContentSize().Width
+				nItemWidth = nItemWidth + child:getContentSize().width
 			end
 		end
 	end
-	self:setContentSize(CCSize(nTotalWidth, height))			
+	self:setContentSize(CCSize(nTotalWidth, maxHeight))			
 end
