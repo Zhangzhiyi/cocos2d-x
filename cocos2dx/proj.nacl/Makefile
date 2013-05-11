@@ -34,6 +34,7 @@ SOURCES = ../actions/CCAction.cpp \
 ../cocoa/CCArray.cpp \
 ../cocoa/CCDictionary.cpp \
 ../cocoa/CCString.cpp \
+../cocoa/CCDataVisitor.cpp \
 ../draw_nodes/CCDrawingPrimitives.cpp \
 ../draw_nodes/CCDrawNode.cpp \
 ../effects/CCGrabber.cpp \
@@ -136,8 +137,6 @@ include cocos2dx.mk
 CXXFLAGS += -Wno-sequence-point
 
 TARGET = $(LIB_DIR)/libcocos2d.a
-
-DEFINES += -DCC_ENABLE_CHIPMUNK_INTEGRATION
 
 all: $(TARGET)
 
