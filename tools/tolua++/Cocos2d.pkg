@@ -76,3 +76,5 @@ $pfile "CCTouch.pkg"
 $pfile "CCSet.pkg"
 
 $pfile "SimpleAudioEngine.pkg"
+$pfile "CCClipLayer.pkg"
+$pfile "CCStyleLabel.pkg"

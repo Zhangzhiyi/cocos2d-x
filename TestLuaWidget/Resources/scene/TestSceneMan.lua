@@ -86,5 +86,21 @@ function TestSceneMan:ctor()
 	tableView:setPosition(ccp(700, 300))
 	tableView:reloadData()
 	self._mainLayer:addChild(tableView._node)
+	
+	local styleLabel = CCStyleLabel:create("HelloWorld!", "Helvetica", 24)
+	local function labelClick()
+		CCLuaLog("labelClick")
+	end
+	styleLabel:setPerformClickEnable(true)
+	styleLabel:registerScriptClickHandler(labelClick)
+	styleLabel:setPosition(ccp(700, 430))
+	self._mainLayer:addChild(styleLabel)
+		
+	local styleLabelTable = {styleLabels = 
+									{{str = "My Name is:", fontName = "Helvetica", fontSize = 20, drawBottomLine = false},
+									 {str = "zhangzhiyi", fontName = "Helvetica", fontSize = 20, fontColor = ccc3(255,0,0), lineColor = ccc4f(255,0,0,255), drawBottomLine = true, performClickEnable = true, styleLabelClickFunc = labelClick}}}
+	local styleLabelGroup = StyleLabelGroup.new(styleLabelTable)
+	styleLabelGroup:setPosition(ccp(300, 430))
+	self._mainLayer:addChild(styleLabelGroup._node)
 end
 return TestSceneMan

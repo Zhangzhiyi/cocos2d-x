@@ -1,0 +1,17 @@
+class ClipLayer : public CCLayer
+{
+	ClipLayer(void);
+	~ClipLayer(void);
+	
+	static ClipLayer* create();
+	static ClipLayer* create(const CCSize& viewSize);
+
+	CCSize getViewSize(){return m_ViewSize;};
+	void setViewSize(const CCSize& viewSize);
+	CCRect getViewRect();
+
+	CCRect getClipingRect(){return m_ClipingRect;};
+	void setClipingRect(const CCRect& clipingRect);
+	bool getClipingAble(){return m_bClipingAble;};
+	void setClipingAble(bool clipingAble);
+};

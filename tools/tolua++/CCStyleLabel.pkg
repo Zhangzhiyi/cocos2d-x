@@ -1,0 +1,25 @@
+class CCStyleLabel : public CCLabelTTF
+{
+	CCStyleLabel(void);
+	~CCStyleLabel(void);
+	
+	static CCStyleLabel* create();
+	static CCStyleLabel* create(const char* str, const char* fontName, float fontSize);
+
+	void setPerformClickEvent(bool enable);
+	bool isTouchEnabled();
+	void setTouchEnabled(bool value);
+	void setTouchPriority(int priority);
+	int getTouchPriority();
+	void setDrawBottomLine(bool enable);
+	bool isDrawBottomLine(){return m_bDrawBottomLine;}
+	void setLineWidth(float lineWidth);
+	float getLineWidth(){return m_fLineWidth;}
+	void setLineColor(ccColor4F lineColor);
+	ccColor4F getLineColor(){return m_lineColor;}
+
+	/** Register menu handler script function */
+	void registerScriptClickHandler(int nHandler);
+	void unregisterScriptClickHandler(void);
+	int getScriptClickHandler() { return m_nScriptClickHandler; };
+};

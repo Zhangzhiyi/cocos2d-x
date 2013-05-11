@@ -31,6 +31,9 @@
     <filename>scene\StandardSceneMan.lua</filename>
   </file>
   <file>
+    <filename>widget\StyleLabelGroup.lua</filename>
+  </file>
+  <file>
     <filename>widget\TableView.lua</filename>
   </file>
   <file>

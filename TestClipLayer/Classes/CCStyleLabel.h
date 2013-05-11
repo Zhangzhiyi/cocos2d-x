@@ -25,17 +25,27 @@ public:
 	virtual int getTouchPriority();
 
 	void registerWithTouchDispatcher(void);
-
 	bool contaisTouchLocation(CCTouch* touch);
-protected:
-	//float m_fLineWidth;
-	//ccColor4F m_lineColor;
-	bool m_bTouchEnabled;
-	CC_SYNTHESIZE(bool, m_bDrawBottomLine, DrawBottomLine);
-	CC_SYNTHESIZE(float, m_fLineWidth, LineWidth);
-	CC_SYNTHESIZE(ccColor4F, m_lineColor, LineColor);
+
+	void setDrawBottomLine(bool enable);
+	bool isDrawBottomLine(){return m_bDrawBottomLine;}
+	void setLineWidth(float lineWidth);
+	float getLineWidth(){return m_fLineWidth;}
+	void setLineColor(ccColor4F lineColor);
+	ccColor4F getLineColor(){return m_lineColor;}
+
+	/** Register menu handler script function */
+	virtual void registerScriptClickHandler(int nHandler);
+	virtual void unregisterScriptClickHandler(void);
+	int getScriptClickHandler() { return m_nScriptClickHandler; };
 private:
 	int m_nTouchPriority;
+	bool m_bTouchEnabled;
+	bool m_bDrawBottomLine;
+	float m_fLineWidth;
+	ccColor4F m_lineColor;
+
+	int  m_nScriptClickHandler;
 	//int  excuteScriptTouchHandler(int nEventType, CCTouch *pTouch);
 };
 #endif
