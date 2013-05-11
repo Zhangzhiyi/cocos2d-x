@@ -1,13 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source">
+    <Filter Include="Classes">
       <UniqueIdentifier>{610fd8c8-8df0-4b80-8e4b-9dd3cbe9f1be}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{44e23f07-397e-4deb-b37e-bdf4c98ffcbf}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{e0ffd457-0f98-4f50-95a9-b0d4c68ff5e1}</UniqueIdentifier>
@@ -56,33 +51,33 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="main.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\VisibleRect.h">
-      <Filter>include</Filter>
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\VisibleRect.cpp">
-      <Filter>source</Filter>
+      <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

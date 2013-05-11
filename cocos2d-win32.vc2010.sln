@@ -106,6 +106,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestTileMap.win32", "TestTi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestTouchEvent.win32", "TestTouchEvent\proj.win32\TestTouchEvent.win32.vcxproj", "{8A3B607C-D65B-4F5F-BEAE-2E496A67DD9C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSimpleGame.win32", "TestSimpleGame\proj.win32\TestSimpleGame.win32.vcxproj", "{B0B3A9CB-87B0-483E-8AA6-1C8010D40F0B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestMemoryMan.win32", "TestMemoryMan\proj.win32\TestMemoryMan.win32.vcxproj", "{39978557-CC8A-4247-A773-E69E78FE6023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -196,6 +200,14 @@ Global
 		{8A3B607C-D65B-4F5F-BEAE-2E496A67DD9C}.Debug|Win32.Build.0 = Debug|Win32
 		{8A3B607C-D65B-4F5F-BEAE-2E496A67DD9C}.Release|Win32.ActiveCfg = Release|Win32
 		{8A3B607C-D65B-4F5F-BEAE-2E496A67DD9C}.Release|Win32.Build.0 = Release|Win32
+		{B0B3A9CB-87B0-483E-8AA6-1C8010D40F0B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B0B3A9CB-87B0-483E-8AA6-1C8010D40F0B}.Debug|Win32.Build.0 = Debug|Win32
+		{B0B3A9CB-87B0-483E-8AA6-1C8010D40F0B}.Release|Win32.ActiveCfg = Release|Win32
+		{B0B3A9CB-87B0-483E-8AA6-1C8010D40F0B}.Release|Win32.Build.0 = Release|Win32
+		{39978557-CC8A-4247-A773-E69E78FE6023}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39978557-CC8A-4247-A773-E69E78FE6023}.Debug|Win32.Build.0 = Debug|Win32
+		{39978557-CC8A-4247-A773-E69E78FE6023}.Release|Win32.ActiveCfg = Release|Win32
+		{39978557-CC8A-4247-A773-E69E78FE6023}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,54 +40,6 @@ HelloWorld::HelloWorld(void)
 	bullets = CCArray::create();
 	bullets->retain();
 
-	CCArray* test = CCArray::create();
-	test->addObject(CCInteger::create(1));
-	test->addObject(CCInteger::create(2));
-	test->addObject(CCInteger::create(3));
-	test->addObject(CCInteger::create(4));
-	//CCObject* pObject = NULL;
-	//CCARRAY_FOREACH(test, pObject)
-	//{
-	//	CCInteger* integer = (CCInteger*)pObject;
-	//	
-	//	if (integer->getValue() == 2)
-	//	{
-	//		test->removeObject(pObject); //1 4 4
-	//	}
-	//	else
-	//	{
-	//		CCLOG("%d", integer->getValue());
-	//	}
-	//	
-	//}
-	for (int i = 0; i < test->count(); i++)
-	{
-		CCInteger* integer = (CCInteger*)test->objectAtIndex(i);
-		if (integer->getValue() == 2)
-		{
-			test->removeObject(integer); //1 3 4 这个输出正确值
-			i -- ;
-		}
-		else
-		{
-			CCLOG("%d", integer->getValue());
-		}
-	}
-	CCInteger* integer1 = CCInteger::create(1);
-	CCInteger* integer2 = CCInteger::create(2);
-	CCInteger* integer3 = CCInteger::create(3);
-
-	CCArray* test1 = CCArray::create();
-	test1->addObject(integer1);
-	test1->addObject(integer2);
-	test1->addObject(integer3);
-	CCArray* test2 = CCArray::create();
-	test2->addObject(integer1);
-	test2->addObject(integer2);
-	test2->addObject(integer3);
-
-	test1->removeObject(integer1);
-	CCInteger* integer4 = CCInteger::create(3);
 }
 HelloWorld::~HelloWorld(void)
 {
