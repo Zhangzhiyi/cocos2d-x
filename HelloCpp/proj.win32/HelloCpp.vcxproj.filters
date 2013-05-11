@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Classes\Obj">
+      <UniqueIdentifier>{82d8d139-621b-4592-b473-41488958911e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Obj\Effect">
+      <UniqueIdentifier>{09caa4c9-a4c9-4822-b219-bc9dc8877b76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scene">
+      <UniqueIdentifier>{637e8f7f-4dd9-46f5-89d7-7f636b842f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\util">
+      <UniqueIdentifier>{a3bc6d35-1b77-4ae0-8941-7650ba227349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Common">
+      <UniqueIdentifier>{50339911-d30d-46ad-a756-9066ce3d4f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Common\Net">
+      <UniqueIdentifier>{dbbfb2ed-06bb-4692-90d7-68920ad278d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Animal.cpp">
+      <Filter>Classes\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Animal_Multiple.cpp">
+      <Filter>Classes\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Animal_One.cpp">
+      <Filter>Classes\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Obj_Animal.cpp">
+      <Filter>Classes\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Obj_Unit.cpp">
+      <Filter>Classes\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Effect\TextureEffect.cpp">
+      <Filter>Classes\Obj\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Obj\Effect\UnitEffect.cpp">
+      <Filter>Classes\Obj\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\MapBackground.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\MapNode.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\MapScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\util\SpriteFrameUtil.cpp">
+      <Filter>Classes\util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Animal.h">
+      <Filter>Classes\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Animal_Multiple.h">
+      <Filter>Classes\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Animal_One.h">
+      <Filter>Classes\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Obj_Animal.h">
+      <Filter>Classes\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Obj_Unit.h">
+      <Filter>Classes\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Effect\TextureEffect.h">
+      <Filter>Classes\Obj\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Obj\Effect\UnitEffect.h">
+      <Filter>Classes\Obj\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\MapBackground.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\MapNode.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\MapScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\SpriteFrameUtil.h">
+      <Filter>Classes\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
