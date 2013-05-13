@@ -17,7 +17,7 @@ function ScrollView:ctor(options)
 	self._container:setPosition(CCPointZero)
 	self:addChild(self._container)	
 	self._bBounceable = options.bounceable or true
-	
+		
 end
 function ScrollView:getContainer()
 	return self._container
@@ -35,6 +35,13 @@ function ScrollView:setContainer(container)
 	self._container:setAnchorPoint(CCPointZero)
 	self._container:setPosition(CCPointZero)
 	self:addChild(self._container)
+		
+end
+function ScrollView:isNodeVisible(node)
+	--local offset = self:getContentOffset() --为什么调用getPosition()返回nil
+	local viewSize = self:getViewSize()
+	local viewRect = CCRect(-(self._container:getPositionX()), -(self._container:getPositionY()), viewSize.width, viewSize.height)
+	return viewRect:intersectsRect(node:boundingBox())
 end
 function ScrollView:setContainerContentSize(size)
 	if self._container then

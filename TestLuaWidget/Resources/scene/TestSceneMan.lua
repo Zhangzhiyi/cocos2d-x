@@ -80,6 +80,7 @@ function TestSceneMan:ctor()
 	local scrollView = ScrollView.new({viewSize = CCSize(100, 200)})
 	scrollView:setPosition(ccp(600, 300))
 	scrollView:setContainer(container._node)
+	scrollView:setContentOffset(ccp(0, scrollView:minContainerOffset().y))
 	self._mainLayer:addChild(scrollView._node)
 	
 	local tableView = TableView.new({viewSize = CCSize(100, 200)})

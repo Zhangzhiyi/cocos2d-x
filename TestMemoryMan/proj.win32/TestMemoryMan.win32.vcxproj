@@ -124,6 +124,8 @@
   <ItemGroup>
     <None Include="..\Resources\CloseNormal.png" />
     <None Include="..\Resources\CloseSelected.png" />
+    <None Include="..\Resources\grossini.png" />
+    <None Include="..\Resources\grossinis_sister1.png" />
     <None Include="..\Resources\HelloWorld.png" />
     <None Include="res\TestMemoryMan.ico" />
   </ItemGroup>
