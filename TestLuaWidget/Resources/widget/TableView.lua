@@ -131,7 +131,7 @@ function TableView:reloadData()
 	for i = 1, cellsCount do
 		self:updateCellAtIndex(i)
 	end
-	--self:checkNodeVisibleInParent() --卡死，要优化
+	self:checkNodeVisibleInParent() --卡死，要优化
 end
 function TableView:onTouchBegan(x, y)
 	if (not self:isVisible()) or (not self:isTouchInside(x, y))then
@@ -148,7 +148,7 @@ function TableView:onTouchBegan(x, y)
 end
 function TableView:onTouchMoved(x, y)
 	TableView.super.onTouchMoved(self, x, y)
-	--self:checkNodeVisibleInParent() -- 卡死了
+	self:checkNodeVisibleInParent() -- 卡死了
 end
 function TableView:onTouchEnded(x, y)
 	if not self:isVisible() then

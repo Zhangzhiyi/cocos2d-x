@@ -27,6 +27,12 @@
     <None Include="..\Resources\HelloWorld.png">
       <Filter>resource</Filter>
     </None>
+    <None Include="..\Resources\grossini.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\grossinis_sister1.png">
+      <Filter>resource</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TestMemoryMan.rc">

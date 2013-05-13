@@ -83,6 +83,19 @@ bool HelloWorld::init()
         // Add the sprite to HelloWorld layer as a child layer.
         this->addChild(pSprite, 0);
 
+		CCTexture2D* texture = CCTextureCache::sharedTextureCache()->addImage("grossinis_sister1.png");
+		
+
+		CCSprite* grossini = CCSprite::create("grossini.png");
+		grossini->setPosition(ccp(size.width/2, size.height/2));
+		grossini->setScaleY(-1);
+		this->addChild(grossini);
+
+		CCRect rect = CCRectZero;
+		rect.size = texture->getContentSize();
+		CCSprite* grossini2 = CCSprite::createWithTexture(texture, rect);
+		grossini2->setPosition(ccp(100, 100));
+		this->addChild(grossini2);
 
 		pArray = CCArray::create();
 		//pArray->autorelease();   //注意：autorelease()多次会出错
