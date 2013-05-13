@@ -48,6 +48,22 @@ function TableView:updateCellAtIndex(index)
 	self:setCellPositionForIndex(cell, index)
 	self._container:addChild(cell)
 	table.insert(self._cells, cell)
+	
+end
+function TableView:checkNodeVisibleInParent()
+	for k,v in ipairs(self._cells) do
+		if v then
+			local bVisible = self:isNodeVisible(v)
+			v:setVisible(bVisible)
+		end
+		
+		--[[local child = array:objectAtIndex(i)
+		child = tolua.cast(child, "CCNode")
+		if child then
+			local bVisible = self:isNodeVisible(child)
+			child:setVisible(bVisible)
+		end--]]
+	end
 end
 function TableView:setCellPositionForIndex(cell, index)
 	local cellSize = self:cellSizeForIndex(index)
@@ -115,9 +131,10 @@ function TableView:reloadData()
 	for i = 1, cellsCount do
 		self:updateCellAtIndex(i)
 	end
+	--self:checkNodeVisibleInParent() --卡死，要优化
 end
 function TableView:onTouchBegan(x, y)
-	if not self:isVisible() then
+	if (not self:isVisible()) or (not self:isTouchInside(x, y))then
 		return
 	end
 	local touchResult = TableView.super.onTouchBegan(self, x, y)
@@ -131,8 +148,7 @@ function TableView:onTouchBegan(x, y)
 end
 function TableView:onTouchMoved(x, y)
 	TableView.super.onTouchMoved(self, x, y)
-		
-
+	--self:checkNodeVisibleInParent() -- 卡死了
 end
 function TableView:onTouchEnded(x, y)
 	if not self:isVisible() then
