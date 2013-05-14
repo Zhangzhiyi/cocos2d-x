@@ -37,12 +37,7 @@ function ScrollView:setContainer(container)
 	self:addChild(self._container)
 		
 end
-function ScrollView:isNodeVisible(node)
-	--local offset = self:getContentOffset() --为什么调用getPosition()返回nil
-	local viewSize = self:getViewSize()
-	local viewRect = CCRect(-(self._container:getPositionX()), -(self._container:getPositionY()), viewSize.width, viewSize.height)
-	return viewRect:intersectsRect(node:boundingBox())
-end
+
 function ScrollView:setContainerContentSize(size)
 	if self._container then
 		self._container:setContentSize(size)
@@ -137,7 +132,7 @@ function ScrollView:setContentOffset(pointOffset)
 	self._container:setPosition(pointOffset)
 end
 function ScrollView:getContentOffset()
-	self._container:getPosition()
+	return self._container:getPosition()
 end
 function ScrollView:maxContainerOffset()
 	return ccp(0, 0)

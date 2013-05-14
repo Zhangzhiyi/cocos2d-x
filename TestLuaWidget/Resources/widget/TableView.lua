@@ -56,14 +56,16 @@ function TableView:checkNodeVisibleInParent()
 			local bVisible = self:isNodeVisible(v)
 			v:setVisible(bVisible)
 		end
-		
-		--[[local child = array:objectAtIndex(i)
-		child = tolua.cast(child, "CCNode")
-		if child then
-			local bVisible = self:isNodeVisible(child)
-			child:setVisible(bVisible)
-		end--]]
 	end
+end
+function TableView:isNodeVisible(node)
+	--local offset = self:getContentOffset() --为什么调用getPosition()返回nil
+	local viewSize = self:getViewSize()
+	local posX = self._container:getPositionX()
+	local posY = self._container:getPositionY()
+	local viewRect = CCRect(-posX, -posY, viewSize.width, viewSize.height)
+	local insert = viewRect:intersectsRect(node:boundingBox())
+	return insert
 end
 function TableView:setCellPositionForIndex(cell, index)
 	local cellSize = self:cellSizeForIndex(index)

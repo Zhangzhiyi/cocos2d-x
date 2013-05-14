@@ -19,6 +19,12 @@
       </breakpoint>
     </file>
     <file>
+      <filename>widget\TableView.lua</filename>
+      <breakpoint>
+        <line>161</line>
+      </breakpoint>
+    </file>
+    <file>
       <filename>scene\TestSceneMan.lua</filename>
       <breakpoint>
         <line>98</line>
