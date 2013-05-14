@@ -27,6 +27,7 @@
             <LuaFile RelativePath=".\widget\TableView.lua" />
             <LuaFile RelativePath=".\widget\TableViewCell.lua" />
             <LuaFile RelativePath=".\widget\StyleLabelGroup.lua" />
+            <LuaFile RelativePath=".\widget\Spinner.lua" />
         </Filter>
         <Filter Name="platform" >
             <LuaFile RelativePath=".\Platform\PlatformBase.lua" />

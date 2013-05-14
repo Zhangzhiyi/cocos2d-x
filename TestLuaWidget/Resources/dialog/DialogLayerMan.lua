@@ -29,11 +29,13 @@ function DialogLayerMan:createSuperMenu()
 	DialogLayerMan.setSuperDialogPriority(menu, self._menuPriority)
 	return menu
 end
-function DialogLayerMan:ctor( standardSceneMan, bAutoFadeIn )
+function DialogLayerMan:ctor( standardSceneMan, strTitle, bAutoFadeIn)
 	--self._mainLayer = CCLayer:create()--CCLayerColor:create(ccc4(0,0,0,0))-- CCLayer:create()	
 	self._mainLayer = ClipLayer:create()
 	self._mainLayer:ignoreAnchorPointForPosition(false)
 	self._mainLayer:setAnchorPoint(CCPointZero)
+	
+	self._strTitle = strTitle or "DialogLayerMan"
 	if bAutoFadeIn == nil then
 		bAutoFadeIn = true
 	end
@@ -41,8 +43,23 @@ function DialogLayerMan:ctor( standardSceneMan, bAutoFadeIn )
 		self._mainLayer:runAction( CCFadeTo:create( 0.3, 166 ) )
 	end
 	self._standardSceneMan = standardSceneMan
-	--self._menuPriority = self._standardSceneMan:getNewDialogPriority() - 1
 	
+    local function handler ( event )
+        if event == "enter" then
+            self:onEnterLayer()
+        elseif event == "exit" then
+            self:onExitLayer()
+        end
+    end
+	self._mainLayer:registerScriptHandler( handler)	
+		
+	self._standardSceneMan._mainScene:addChild( self._mainLayer, INT_MAX )	
+end
+function DialogLayerMan:setPosition(point)
+	self._mainLayer:setPosition(point)
+end
+function DialogLayerMan:registerScriptTouchHandler(bMultiTouches, nTouchPriority, bSwallows)
+	--self._menuPriority = self._standardSceneMan:getNewDialogPriority() - 1
 	local function onTouch(eventType, x, y)
         if eventType == "began" then
             return self:onTouchBegan(x, y)
@@ -54,22 +71,17 @@ function DialogLayerMan:ctor( standardSceneMan, bAutoFadeIn )
 			return self:onTouchCancelled(x, y)
         end
     end		
-	self._mainLayer:registerScriptTouchHandler( onTouch, false, kDialogHandlerPriority, true)
+	self._mainLayer:registerScriptTouchHandler( onTouch, bMultiTouches, nTouchPriority, bSwallows)
 	self._mainLayer:setTouchEnabled(true)
-	
-    local function handler ( event )
-        if event.name == "enter" then
-            self:onEnterLayer()
-        elseif event.name == "exit" then
-            self:onExitLayer()
-        end
-    end
-	self._mainLayer:registerScriptHandler( handler)
-		
-	self._standardSceneMan._mainScene:addChild( self._mainLayer, INT_MAX )	
 end
-function DialogLayerMan:setPosition(point)
-	self._mainLayer:setPosition(point)
+function DialogLayerMan:unregisterScriptTouchHandler()
+	self._mainLayer:setTouchEnabled(false)
+	--self._mainLayer:unregisterScriptTouchHandler()
+end
+--改变触摸优先级，重新注册
+function DialogLayerMan:setLayerTouchPriority(nTouchPriority)
+	self:unregisterScriptTouchHandler()
+	self:registerScriptTouchHandler(false, nTouchPriority, true)
 end	
 function DialogLayerMan:isTouchInside(x, y)
 	local bBox = self._mainLayer:getViewRect()
@@ -81,6 +93,7 @@ function DialogLayerMan:onTouchBegan(x, y)
 	
 	local bInside = self:isTouchInside(x, y)
 	if bInside then
+	    CCLuaLog(self._strTitle .. ":onTouchBegan")
 		self._standardSceneMan:reorderDialog(self)
 	end		
 	return bInside
@@ -96,6 +109,9 @@ function DialogLayerMan:onTouchCancelled(x, y)
 end
 function DialogLayerMan:onEnterLayer()
 	self._standardSceneMan:registerDialog( self )
+	--注册触摸事件
+	self:registerScriptTouchHandler(false, kDialogHandlerPriority, true)
+	
 end
 function DialogLayerMan:onExitLayer()
 	self._standardSceneMan:unregisterDialog( self )

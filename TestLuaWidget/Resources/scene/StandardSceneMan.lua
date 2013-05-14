@@ -6,9 +6,9 @@ function StandardSceneMan:ctor()
 	self._mainLayer = CCLayer:create()--CCLayerColor:create( ccc4(0,0,255, 255) )
 	self._mainScene:addChild( self._mainLayer )
     local function handler(event)
-        if event.name == "enter" then
+        if event == "enter" then
             self:onEnterMainScene()
-        elseif event.name == "exit" then
+        elseif event == "exit" then
             self:onExitMainScene()
         end
     end
@@ -95,9 +95,11 @@ function StandardSceneMan:getNewDialogPriority()
 end
 function StandardSceneMan:reorderDialog(dialog)
 	for i,v in ipairs(self._dialogList) do
-		if v == dialog then
+		if v == dialog then		
+			v:setLayerTouchPriority(kCCMenuHandlerPriority - 2)
 			self._mainScene:reorderChild(v._mainLayer, INT_MAX)
 		else 
+			v:setLayerTouchPriority(kCCMenuHandlerPriority)
 			self._mainScene:reorderChild(v._mainLayer, INT_MAX - 1)
 		end
 	end

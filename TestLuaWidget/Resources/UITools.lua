@@ -18,7 +18,7 @@ cc4BLACK=ccc4(0, 0, 0, 255)
 cc4ORANGE=ccc4(255,127,0, 255);
 cc4GREEN=ccc4(0,255,0, 255);
 INT_MAX = 2147483647
-kCCMenuHandlerPriority = -120
+kCCMenuHandlerPriority = -200
 
 
 function spriteFrameByName(pszName)

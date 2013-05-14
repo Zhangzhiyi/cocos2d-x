@@ -1,7 +1,7 @@
 local BeibaoLayer = class("BeibaoLayer", DialogLayerMan)
 
 function BeibaoLayer:ctor(standardSceneMan)
-	BeibaoLayer.super.ctor(self, standardSceneMan)
+	BeibaoLayer.super.ctor(self, standardSceneMan, "BeibaoLayer")
 	local background = CCSprite:createWithSpriteFrameName("background1.png")
 	background:setAnchorPoint(CCPointZero)
 	--background:setPosition(VisibleRect.center())

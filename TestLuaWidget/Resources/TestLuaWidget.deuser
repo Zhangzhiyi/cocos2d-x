@@ -19,9 +19,9 @@
       </breakpoint>
     </file>
     <file>
-      <filename>widget\TableView.lua</filename>
+      <filename>dialog\DialogLayerMan.lua</filename>
       <breakpoint>
-        <line>161</line>
+        <line>125</line>
       </breakpoint>
     </file>
     <file>

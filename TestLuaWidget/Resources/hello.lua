@@ -13,6 +13,7 @@ require "widget/ProgressBar"
 require "widget/ScrollView"
 require "widget/TableView"
 require "widget/StyleLabelGroup"
+require "widget/Spinner"
 
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)

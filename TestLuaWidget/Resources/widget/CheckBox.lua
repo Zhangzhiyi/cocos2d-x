@@ -29,7 +29,7 @@ function CheckBox:ctor(options)
     end		
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))	
     	
-    self._nTouchPriority = options.nTouchPriority or -129
+    self._nTouchPriority = options.nTouchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
     
