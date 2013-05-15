@@ -29,6 +29,10 @@ function TestSceneMan:ctor()
 	button:setScale(2)
 	self._mainLayer:addChild(button._node)
 	
+	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc})
+	textButton:setPosition(ccp(100, 200))
+	self._mainLayer:addChild(textButton._node)
+	
 	local function beibaoCilckFunc()
 		self.dialog = (require "dialog/BeibaoLayer").new(self)
 		self.dialog:setPosition(ccp(100, 100))

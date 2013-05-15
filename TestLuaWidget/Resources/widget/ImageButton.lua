@@ -18,7 +18,7 @@ function ImageButton:ctor(options)
 	self._nWidth = self._sprite:getContentSize().width
 	self._nHeight = self._sprite:getContentSize().height
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))			
-	self._nTouchPriority = options.nTouchPriority or -129
+	self._nTouchPriority = options.nTouchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	

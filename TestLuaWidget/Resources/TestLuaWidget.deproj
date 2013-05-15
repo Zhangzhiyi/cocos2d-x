@@ -40,6 +40,9 @@
     <filename>scene\TestSceneMan.lua</filename>
   </file>
   <file>
+    <filename>widget\TextButton.lua</filename>
+  </file>
+  <file>
     <filename>UITools.lua</filename>
   </file>
   <file>
