@@ -317,9 +317,9 @@ int CCLuaEngine::executeEvent(int nHandler, const char* pEventName, CCObject* pE
     return ret;
 }
 
-bool CCLuaEngine::handleAssert(const char *msg)
+bool CCLuaEngine::executeAssert(bool cond, const char *msg/* = NULL */)
 {
-    bool ret = m_stack->handleAssert(msg);
+    bool ret = m_stack->executeAssert(cond, msg);
     m_stack->clean();
     return ret;
 }
