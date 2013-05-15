@@ -162,6 +162,6 @@ void CCStyleLabel::ccTouchEnded(CCTouch* touch, CCEvent* event)
 				m_stack->clean();
 			}
 		}
-		CCLOG("Click");
+		//CCLOG("Click");
 	}
 }

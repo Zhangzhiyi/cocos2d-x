@@ -5,7 +5,13 @@ function TableView:ctor(options)
 	
 	self._cells = {} --存储所有cell的表
 	self._cellPosition = {} --存储每一个cell的位置表
-	self._touchCell = nil --存储触摸选中的cell	
+	self._touchCell = nil --存储触摸选中的cell
+	
+	self._numberOfCellsFunc = options.numberOfCellsFunc
+	self._cellSizeForIndexFunc = options.cellSizeForIndexFunc	
+	self._tableCellAtIndexFunc = options.tableCellAtIndexFunc
+	self._tableCellHighlightFunc = options.tableCellHighlightFunc
+	self._tableCellUnhighlightFunc = options.tableCellUnhighlightFunc
 end
 function TableView:updateCellPositions()
 	tableForClear(self._cellPosition)
@@ -45,10 +51,11 @@ function TableView:updateContentSize()
 end
 function TableView:updateCellAtIndex(index)
 	local cell = self:tableCellAtIndex(index)
-	self:setCellPositionForIndex(cell, index)
-	self._container:addChild(cell)
-	table.insert(self._cells, cell)
-	
+	if cell then
+		self:setCellPositionForIndex(cell, index)
+		self._container:addChild(cell)
+		table.insert(self._cells, cell)
+	end	
 end
 function TableView:checkNodeVisibleInParent()
 	for k,v in ipairs(self._cells) do
@@ -111,18 +118,51 @@ function TableView:halfFindIndex(hight, low, search) --二分查找
 	return -1
 end	
 function TableView:numberOfCells()
-	return 20
+	if self._numberOfCellsFunc then
+		return self._numberOfCellsFunc()
+	end
+	return 0
 end
 function TableView:cellSizeForIndex(index)
-	return CCSize(60, 60)
+	if self._cellSizeForIndexFunc then
+		return self._cellSizeForIndexFunc(index)
+	end
+	return CCSize(0, 0)
 end
 function TableView:tableCellAtIndex(index)
-	local cell = CCSprite:create("Icon.png")
-	return cell
+	local existCell = self._cells[index]
+	--是否已经存在
+	if existCell then
+		return existCell
+	end
+	if self._tableCellAtIndexFunc then
+		return self._tableCellAtIndexFunc(index)
+	end		
+	return nil
 end
 function TableView:cellAtIndex(index)
 	if self._cells then
 		return self._cells[index]
+	end
+end
+function TableView:indexFromCell(cell)
+	if self._cells and cell then
+		for k,v in ipairs(self._cells) do
+			if v == cell then
+				return k
+			end
+		end
+	end
+	return nil
+end
+function TableView:tableCellHighlight(cell)
+	if self._tableCellHighlightFunc then
+		self._tableCellHighlightFunc(cell)
+	end
+end
+function TableView:tableCellUnhighlight(cell)
+	if self._tableCellUnhighlightFunc then
+		self._tableCellUnhighlightFunc(cell)
 	end
 end
 function TableView:reloadData()
@@ -145,20 +185,34 @@ function TableView:onTouchBegan(x, y)
 	if index ~= -1 then
 		CCLuaLog("touch:" .. index)
 		self._touchCell = self:cellAtIndex(index)
+		if self._touchCell then
+			self:tableCellHighlight(self._touchCell)
+		end
 	end
 	return touchResult
 end
 function TableView:onTouchMoved(x, y)
 	TableView.super.onTouchMoved(self, x, y)
-	--self:checkNodeVisibleInParent() -- 卡死了
+	--self:checkNodeVisibleInParent() -- 卡死了	
+	
+	if self._touchCell and self:isTouchMoved() then
+		self:tableCellUnhighlight(self._touchCell)
+		self._touchCell = nil
+	end
 end
 function TableView:onTouchEnded(x, y)
 	if not self:isVisible() then
 		return
 	end
-	
+	if self._touchCell then
+		self:tableCellUnhighlight(self._touchCell)
+		self._touchCell = nil
+	end
 	TableView.super.onTouchEnded(self, x, y)
 end
 function TableView:onTouchCancelled(x, y)
-
+	if self._touchCell then
+		self:tableCellUnhighlight(self._touchCell)
+		self._touchCell = nil
+	end
 end

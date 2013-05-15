@@ -83,20 +83,42 @@ function TestSceneMan:ctor()
 	scrollView:setContentOffset(ccp(0, scrollView:minContainerOffset().y))
 	self._mainLayer:addChild(scrollView._node)
 	
-	local tableView = TableView.new({viewSize = CCSize(100, 200)})
+	local function numberOfCells()
+		return 20
+	end
+	local function cellSizeForIndex(index)
+		return CCSize(60, 60)	
+	end
+	local function tableCellAtIndex(index)
+		local cell = CCSprite:create("Icon.png")
+		return cell
+	end
+	local function tableCellHighlight(cell)
+		cell:setOpacity(125)
+	end
+	local function tableCellUnhighlight(cell)
+		cell:setOpacity(255)
+	end
+	local tableView = TableView.new({viewSize = CCSize(100, 200), numberOfCellsFunc = numberOfCells, 
+									 cellSizeForIndexFunc = cellSizeForIndex, tableCellAtIndexFunc = tableCellAtIndex,
+									 tableCellHighlightFunc = tableCellHighlight,
+									 tableCellUnhighlightFunc = tableCellUnhighlight})
 	tableView:setPosition(ccp(700, 300))
 	tableView:reloadData()
 	self._mainLayer:addChild(tableView._node)
 	
 	local styleLabel = CCStyleLabel:create("HelloWorld!", "Helvetica", 24)
-	local function labelClick()
-		CCLuaLog("labelClick")
+	local function styleLabelClick()
+		CCLuaLog("HelloWorld")
 	end
 	styleLabel:setPerformClickEnable(true)
-	styleLabel:registerScriptClickHandler(labelClick)
+	styleLabel:registerScriptClickHandler(styleLabelClick)
 	styleLabel:setPosition(ccp(700, 430))
 	self._mainLayer:addChild(styleLabel)
-		
+	
+	local function labelClick()
+		CCLuaLog("zhangzhiyi")
+	end	
 	local styleLabelTable = {styleLabels = 
 									{{str = "My Name is:", fontName = "Helvetica", fontSize = 20, drawBottomLine = false},
 									 {str = "zhangzhiyi", fontName = "Helvetica", fontSize = 20, fontColor = ccc3(255,0,0), lineColor = ccc4f(255,0,0,255), drawBottomLine = true, performClickEnable = true, styleLabelClickFunc = labelClick}}}
