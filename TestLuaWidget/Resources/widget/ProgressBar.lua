@@ -46,5 +46,32 @@ end
 function ProgressBar:getPercent()
 	return self._nPercent
 end
-
+function ProgressBar:setPercentDuration(nPercent, nDuration)
+	self._nDuration = nDuration or 1.2
+	self._nElapsed = 0
+	self._nTargetPercent = nPercent
+	self._nDiffPercent = nPercent - self._nPercent
+	local function tick(dt)
+		self:updatePercent(dt)
+	end
+	if self._updateEntry then
+		CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self._updateEntry)
+		self._updateEntry = nil
+	end
+	self._updateEntry = CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(tick, 0, false)
+end
+function ProgressBar:updatePercent(dt)
+	self._nElapsed = self._nElapsed + dt
+	
+	if self._nElapsed >= self._nDuration then
+		if self._updateEntry then
+			CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self._updateEntry)
+			self._updateEntry = nil
+		end
+		self:setPercent(self._nTargetPercent)
+	end
+		
+	local percent = self._nDiffPercent * (dt/self._nDuration) + self._nPercent
+	self:setPercent(percent)
+end
 

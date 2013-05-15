@@ -48,7 +48,8 @@ function TestSceneMan:ctor()
 	local loading = ProgressBar.new({backgroundSprite = "jindutiaodi.png", progressSprite = "jindutiao.png"})
 	loading:setPosition(ccp(500, 100))
 	self._mainLayer:addChild(loading._node)
-	loading:setPercent(0.75)
+	--loading:setPercent(0.75)
+	loading:setPercentDuration(1, 10)
 	
 	local checkBox1 = CheckBox.new({onEnSfName = "xuanzhong.png", 
 									 offEnSfName = "xuanzhongkong.png", 
