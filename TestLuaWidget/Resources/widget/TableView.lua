@@ -12,6 +12,7 @@ function TableView:ctor(options)
 	self._tableCellAtIndexFunc = options.tableCellAtIndexFunc
 	self._tableCellHighlightFunc = options.tableCellHighlightFunc
 	self._tableCellUnhighlightFunc = options.tableCellUnhighlightFunc
+	self._tableCellTouchedFunc = options.tableCellTouchedFunc
 end
 function TableView:updateCellPositions()
 	tableForClear(self._cellPosition)
@@ -165,6 +166,11 @@ function TableView:tableCellUnhighlight(cell)
 		self._tableCellUnhighlightFunc(cell)
 	end
 end
+function TableView:tableCellTouched(index, cell)
+	if self._tableCellTouchedFunc then
+		self._tableCellTouchedFunc(index, cell)
+	end
+end
 function TableView:reloadData()
 	tableForClear(self._cells)
 	self:updateCellPositions()
@@ -183,7 +189,7 @@ function TableView:onTouchBegan(x, y)
 	local point = self:getContainer():convertToNodeSpace(ccp(x, y))
 	local index = self:indexFromOffset(point)		
 	if index ~= -1 then
-		CCLuaLog("touch:" .. index)
+		--CCLuaLog("touch:" .. index)
 		self._touchCell = self:cellAtIndex(index)
 		if self._touchCell then
 			self:tableCellHighlight(self._touchCell)
@@ -204,8 +210,14 @@ function TableView:onTouchEnded(x, y)
 	if not self:isVisible() then
 		return
 	end
-	if self._touchCell then
-		self:tableCellUnhighlight(self._touchCell)
+	if self._touchCell then	
+		local boundingBox = self:boundingBox()
+		boundingBox.origin = self._node:getParent():convertToWorldSpace(boundingBox.origin)
+		if boundingBox:containsPoint(ccp(x, y)) then
+			self:tableCellUnhighlight(self._touchCell)
+			local index = self:indexFromCell(self._touchCell)
+			self:tableCellTouched(index, self._touchCell)
+		end			
 		self._touchCell = nil
 	end
 	TableView.super.onTouchEnded(self, x, y)

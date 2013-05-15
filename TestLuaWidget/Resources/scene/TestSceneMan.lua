@@ -99,10 +99,14 @@ function TestSceneMan:ctor()
 	local function tableCellUnhighlight(cell)
 		cell:setOpacity(255)
 	end
+	local function tableCellTouched(index, cell)
+		CCLuaLog("touch:" .. index)
+	end
 	local tableView = TableView.new({viewSize = CCSize(100, 200), numberOfCellsFunc = numberOfCells, 
 									 cellSizeForIndexFunc = cellSizeForIndex, tableCellAtIndexFunc = tableCellAtIndex,
 									 tableCellHighlightFunc = tableCellHighlight,
-									 tableCellUnhighlightFunc = tableCellUnhighlight})
+									 tableCellUnhighlightFunc = tableCellUnhighlight,
+									 tableCellTouchedFunc = tableCellTouched})
 	tableView:setPosition(ccp(700, 300))
 	tableView:reloadData()
 	self._mainLayer:addChild(tableView._node)

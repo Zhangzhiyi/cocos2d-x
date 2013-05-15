@@ -124,9 +124,9 @@ end
 function CCNodeExtend:isTouchInside(x, y)
 	local touchLocation = ccp( x,y )
     --CCLuaLog(string.format("x:%0.2f, y:%0.2f", x, y))
-    touchLocation = self._layer:getParent():convertToNodeSpace(touchLocation)
+    touchLocation = self._node:getParent():convertToNodeSpace(touchLocation)
     --CCLuaLog(string.format("convert x:%0.2f, y:%0.2f", touchLocation.x, touchLocation.y))
-    local bBox = self._layer:boundingBox();
+    local bBox = self:boundingBox();
     --CCLuaLog(string.format("bbox x:%0.2f, y:%0.2f, width:%d, height:%d", bBox.origin.x, bBox.origin.y, bBox.size.width, bBox.size.height))
     local bInside = bBox:containsPoint(touchLocation)
     return bInside
