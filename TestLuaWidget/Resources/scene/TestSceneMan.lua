@@ -134,5 +134,9 @@ function TestSceneMan:ctor()
 	local styleLabelGroup = StyleLabelGroup.new(styleLabelTable)
 	styleLabelGroup:setPosition(ccp(300, 430))
 	self._mainLayer:addChild(styleLabelGroup._node)
+	
+	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png"})
+	spinner:setPosition(ccp(100, 320))
+	self._mainLayer:addChild(spinner._node)
 end
 return TestSceneMan

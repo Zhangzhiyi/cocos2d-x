@@ -23,7 +23,7 @@ function TextButton:ctor(options)
 	self:setTouchEnabled(true)
 	
 	self._clickFunc = options.onClickEvent
-	self._nScale = 1.15
+	self._nScale = options.scale or 1.15
 end
 
 function TextButton:setString(strMsg)

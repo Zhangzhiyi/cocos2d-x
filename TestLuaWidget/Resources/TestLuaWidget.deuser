@@ -21,7 +21,13 @@
     <file>
       <filename>widget\ProgressBar.lua</filename>
       <breakpoint>
-        <line>77</line>
+        <line>76</line>
+      </breakpoint>
+    </file>
+    <file>
+      <filename>widget\Spinner.lua</filename>
+      <breakpoint>
+        <line>25</line>
       </breakpoint>
     </file>
   </files>

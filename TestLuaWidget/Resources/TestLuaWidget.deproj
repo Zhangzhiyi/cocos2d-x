@@ -28,6 +28,9 @@
     <filename>widget\ScrollView.lua</filename>
   </file>
   <file>
+    <filename>widget\Spinner.lua</filename>
+  </file>
+  <file>
     <filename>scene\StandardSceneMan.lua</filename>
   </file>
   <file>
