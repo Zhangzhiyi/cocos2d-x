@@ -30,7 +30,7 @@ function TestSceneMan:ctor()
 	self._mainLayer:addChild(button._node)
 	
 	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc})
-	textButton:setPosition(ccp(100, 200))
+	textButton:setPosition(ccp(VisibleRect.center().x, 150))
 	self._mainLayer:addChild(textButton._node)
 	
 	local function beibaoCilckFunc()
@@ -135,7 +135,7 @@ function TestSceneMan:ctor()
 	styleLabelGroup:setPosition(ccp(300, 430))
 	self._mainLayer:addChild(styleLabelGroup._node)
 	
-	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png"})
+	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png", values = {11111111111, 2222222222, 3333333333}})
 	spinner:setPosition(ccp(100, 320))
 	self._mainLayer:addChild(spinner._node)
 end

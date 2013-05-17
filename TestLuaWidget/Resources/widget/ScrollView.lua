@@ -16,7 +16,12 @@ function ScrollView:ctor(options)
 	self._container:setAnchorPoint(CCPointZero)
 	self._container:setPosition(CCPointZero)
 	self:addChild(self._container)	
-	self._bBounceable = options.bounceable or true
+	
+	if options.bounceable ~= nil then
+		self._bBounceable = options.bounceable
+	else 
+		self._bBounceable = true
+	end
 		
 end
 function ScrollView:getContainer()
