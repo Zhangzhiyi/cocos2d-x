@@ -1,7 +1,7 @@
 TextButton = class("TextButton", CCNodeExtend)
 
 function TextButton:ctor(options)
-	TextButton.super.ctor(self)
+	TextButton.super.ctor(self, options)
 	
 	self._nFontSize = options.fontSize or DEFAULT_TTF_FONT_SIZE
 	self._strFontName = options.fontName or DEFAULT_TTF_FONT
@@ -10,7 +10,6 @@ function TextButton:ctor(options)
 	if options.color then
 		self._labelTTF:setColor(options.color)
 	end
-	self._bEnabled = options.isEnabled	or true
 	
 	self._labelTTF:setPosition(self._labelTTF:getContentSize().width/2, self._labelTTF:getContentSize().height/2)
 	self:addChild(self._labelTTF)
@@ -40,17 +39,9 @@ end
 
 function TextButton:setFontSize(nFontSize)
 	self._labelTTF:setFontSize(nFontSize)
-end
-function TextButton:isEnabled()
-	return self._bEnabled
 end	
-function TextButton:setEnabled(bEnabled)
-	if self._bEnabled ~= bEnabled then
-		self._bEnabled = bEnabled		
-	end
-end
 function TextButton:onTouchBegan(x, y)
-	if ((not self._bEnabled) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
+	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end
 	self._labelTTF:setScale(self._nScale)

@@ -1,14 +1,14 @@
 CheckBox = class("CheckBox", CCNodeExtend)
 --[[    --]]
 function CheckBox:ctor(options)
-	CheckBox.super.ctor(self)
+	CheckBox.super.ctor(self, options)
     self._onEnSpriteFrame = spriteFrameByName(options.onEnSfName)
     self._offEnSpriteFrame = spriteFrameByName(options.offEnSfName)    
     self._onDisSpriteFrame = spriteFrameByName(options.onDisSfName)
     self._offDisSpriteFrame = spriteFrameByName(options.offDisSfName) 
-  
-    self._bEnabled = options.isEnabled or true
+  	
     self._bChecked = options.isChecked or false
+	
 	self._checkedFunc = options.onCheckEvent
     self._label = CCLabelTTF:create(options.strMsg, DEFAULT_TTF_FONT, DEFAULT_TTF_FONT_SIZE)
     self._sprite = CCSprite:create()       
@@ -35,11 +35,9 @@ function CheckBox:ctor(options)
     
 
 end
-function CheckBox:setEnable(bEnabled)
-    if self._bEnabled ~= bEnabled then
-        self._bEnabled = bEnabled
-        self:updateState()
-    end
+function CheckBox:setEnabled(bEnabled)
+	CheckBox.super.setEnabled(bEnabled)
+	self:updateState()
 end
 function CheckBox:setChecked(bChecked)
     if self._bChecked ~= bChecked then
@@ -54,6 +52,9 @@ function CheckBox:setChecked(bChecked)
 			end
 		end
     end
+end
+function CheckBox:isChecked()
+	return self._bChecked
 end
 function CheckBox:updateState()
     if self._bEnabled and self._bChecked then
@@ -70,7 +71,7 @@ function CheckBox:toggle()
 	return self:setChecked(not self._bChecked)
 end
 function CheckBox:onTouchBegan(x, y)
-	if ((not self._bEnabled) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
+	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end		
 	return true

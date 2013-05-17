@@ -4,9 +4,8 @@ function Spinner:ctor(options)
 	Spinner.super.ctor(self)
 	self._normalSpriteFrame = options.normalSfName and spriteFrameByName(options.normalSfName)
 	self._pressedSpriteFrame = options.pressedSfName and spriteFrameByName(options.pressedSfName)
-	self._disabledSpriteFrame = options.disabledSfName and spriteFrameByName(options.disabledSfName)
+	self._disabledSpriteFrame = options.disabledSfName and spriteFrameByName(options.disabledSfName)	
 	
-	self._bEnabled = options.isEnabled	or true
 	self._sprite = CCSprite:create()
 	self._sprite:setDisplayFrame(self._normalSpriteFrame)
 	self._sprite:setPosition(self._sprite:getContentSize().width/2, self._sprite:getContentSize().height/2)
@@ -20,7 +19,7 @@ function Spinner:ctor(options)
 	self:setTouchEnabled(true)
 end
 function Spinner:onTouchBegan(x, y)
-	if ((not self._bEnabled) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
+	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end		
 	local point = self._sprite:convertToNodeSpace(ccp(x, y))

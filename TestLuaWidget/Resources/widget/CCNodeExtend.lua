@@ -1,6 +1,6 @@
 CCNodeExtend = class("CCNodeExtend")
 
-function CCNodeExtend:ctor()
+function CCNodeExtend:ctor(options)
 	self._node = CCNode:create()
     self._layer = CCLayer:create()
     self._node:addChild(self._layer)
@@ -8,7 +8,21 @@ function CCNodeExtend:ctor()
 	--[[当CCNode没有设置ContentSize的时候,默认的ContentSize是(0, 0),
 	当ContentSize是(0, 0)的时候，改变锚点是没有效果的，这种情况可以将CCNode看成是一个点--]]
 	self:setAnchorPoint(CCPoint05)	
+	
+	--enable默认为true
+	--注意：self._bEnabled = options.isEnabled or true ,当options.isEnabled为false的时候，还是返回true，错误
+	if options then
+		if options.isEnabled ~= nil then
+			self._bEnabled = options.isEnabled
+		else 
+			self._bEnabled = true
+		end	
+	else 
+		self._bEnabled = true
+	end
+	
 end
+
 function CCNodeExtend:registerScriptHandler(handler)
 	if not handler then
 		handler = function(event)
@@ -63,6 +77,14 @@ end
 --[[function CCNodeExtend:addChild(child, zOrder)		
 	self._layer:addChild(child, zOrder)
 end--]]
+function CCNodeExtend:setEnabled(bEnabled)
+    if self._bEnabled ~= bEnabled then
+        self._bEnabled = bEnabled	
+    end
+end
+function CCNodeExtend:isEnabled()
+	return self._bEnabled
+end
 function CCNodeExtend:isVisible()
 	return self._node:isVisible()
 end

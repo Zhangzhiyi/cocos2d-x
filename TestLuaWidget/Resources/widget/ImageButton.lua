@@ -1,13 +1,13 @@
 ImageButton = class("ImageButton", CCNodeExtend)
 function ImageButton:ctor(options)
-	ImageButton.super.ctor(self)
+	ImageButton.super.ctor(self, options)
 	
 	self._normalSpriteFrame = options.normalSfName and spriteFrameByName(options.normalSfName)
 	self._pressedSpriteFrame = options.pressedSfName and spriteFrameByName(options.pressedSfName)
 	self._disabledSpriteFrame = options.disabledSfName and spriteFrameByName(options.disabledSfName)
+			
+	self._bPressed = false
 	
-	self._bEnabled = options.isEnabled	or true
-	self._bPressed = options.isPressed or false
 	self._clickFunc = options.onClickEvent
 	self._sprite = CCSprite:create()
 	
@@ -35,19 +35,14 @@ function ImageButton:updateState()
 			self._sprite:setDisplayFrame(self._disabledSpriteFrame)
 		end
 	end
-end
-function ImageButton:isEnabled()
-	return self._bEnabled
-end	
+end		
 function ImageButton:setEnabled(bEnabled)
-	if self._bEnabled ~= bEnabled then
-		self._bEnabled = bEnabled
-		self:updateState()
-	end
+	ImageButton.super.setEnabled(bEnabled)
+	self:updateState()
 end
 function ImageButton:isPressed()
 	return self._bPressed
-end
+end	
 function ImageButton:setPressed(bPressed)
 	if self._bPressed ~= bPressed then
 		self._bPressed = bPressed
@@ -55,7 +50,7 @@ function ImageButton:setPressed(bPressed)
 	end
 end
 function ImageButton:onTouchBegan(x, y)
-	if ((not self._bEnabled) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
+	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end
     --CCLuaLog("onTouchBegan isTouchInside")
