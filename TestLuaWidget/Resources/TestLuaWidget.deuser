@@ -30,5 +30,11 @@
         <line>25</line>
       </breakpoint>
     </file>
+    <file>
+      <filename>scene\TestSceneMan.lua</filename>
+      <breakpoint>
+        <line>144</line>
+      </breakpoint>
+    </file>
   </files>
 </project>

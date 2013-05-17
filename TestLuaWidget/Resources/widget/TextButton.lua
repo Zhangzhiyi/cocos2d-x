@@ -9,8 +9,7 @@ function TextButton:ctor(options)
 	self._labelTTF = CCLabelTTF:create(self._strLabel, self._strFontName, self._nFontSize)
 	if options.color then
 		self._labelTTF:setColor(options.color)
-	end
-	
+	end		
 	self._labelTTF:setPosition(self._labelTTF:getContentSize().width/2, self._labelTTF:getContentSize().height/2)
 	self:addChild(self._labelTTF)
 	

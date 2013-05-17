@@ -26,6 +26,8 @@ function Spinner:ctor(options)
 	self._selectLabel:setPosition(ccp(10, self._nHeight/2))
 	self:addChild(self._selectLabel)
 	
+	self._valueChangeFunc = options.onValueChangeEvent
+	
 	local function numberOfCells()
 		return #self._values
 	end
@@ -45,9 +47,12 @@ function Spinner:ctor(options)
 		cell:setScale(1)
 	end
 	local function tableCellTouched(index, cell)
-		CCLuaLog("touch:" .. index)
+		--CCLuaLog("touch:" .. index)
 		self._nSelect = index
 		self:setSelectLabel(self._values[self._nSelect])
+		if self._valueChangeFunc then
+			self._valueChangeFunc(index, self._values[index])
+		end
 		self:showSelectLayer(false)
 	end
 	self._tableView = TableView.new({viewSize = CCSize(self._nWidth, 100), numberOfCellsFunc = numberOfCells, 

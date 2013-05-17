@@ -19,7 +19,7 @@ function TestSceneMan:ctor()
                                    isEnabled = true,
                                    isOn = true,
 								   onCheckEvent = onCheckCallback})
-    checkBox:setPosition(ccp(VisibleRect.center().x - 100, VisibleRect.center().y))								
+    checkBox:setPosition(ccp(VisibleRect.center().x - 180, VisibleRect.center().y))								
     self._mainLayer:addChild(checkBox._node)
 	local function clickFunc()
 		CCLuaLog("ClickEvent")
@@ -29,7 +29,7 @@ function TestSceneMan:ctor()
 	button:setScale(2)
 	self._mainLayer:addChild(button._node)
 	
-	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc})
+	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, color = ccORANGE})
 	textButton:setPosition(ccp(VisibleRect.center().x, 150))
 	self._mainLayer:addChild(textButton._node)
 	
@@ -135,7 +135,10 @@ function TestSceneMan:ctor()
 	styleLabelGroup:setPosition(ccp(300, 430))
 	self._mainLayer:addChild(styleLabelGroup._node)
 	
-	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png", values = {11111111111, 2222222222, 3333333333}})
+	local function valueChangeFunc(index, value)
+		CCLuaLog("index:" .. index .. " value:" .. value)
+	end
+	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png", values = {11111111111, 2222222222, 3333333333}, onValueChangeEvent = valueChangeFunc})
 	spinner:setPosition(ccp(100, 320))
 	self._mainLayer:addChild(spinner._node)
 end
