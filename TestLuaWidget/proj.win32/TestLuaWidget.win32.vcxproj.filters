@@ -77,6 +77,9 @@
     <ClInclude Include="..\Classes\CCStyleLabel.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="cocos2dx_extensions_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +105,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CCStyleLabel.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="cocos2dx_extensions_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

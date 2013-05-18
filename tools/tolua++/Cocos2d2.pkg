@@ -1,2 +1,2 @@
 $#include "LuaCocos2d.h"
-$pfile "CCStyleLabel.pkg"
+$pfile "CCControl.pkg"

@@ -141,5 +141,11 @@ function TestSceneMan:ctor()
 	local spinner = Spinner.new({normalSfName = "xiala2_n.png", pressedSfName = "xiala2_p.png", values = {11111111111, 2222222222, 3333333333}, onValueChangeEvent = valueChangeFunc})
 	spinner:setPosition(ccp(100, 320))
 	self._mainLayer:addChild(spinner._node)
+	
+	local slider = CCControlSlider:create(CCSprite:createWithSpriteFrameName("sliderTrack.png"), CCSprite:createWithSpriteFrameName("sliderProgress.png"), CCSprite:createWithSpriteFrameName("sliderThumb.png"))
+	slider:setMinimumValue(0)
+	slider:setMaximumValue(100)
+	slider:setPosition(ccp(400, 50))
+	self._mainLayer:addChild(slider)
 end
 return TestSceneMan

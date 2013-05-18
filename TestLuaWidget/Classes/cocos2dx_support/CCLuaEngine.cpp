@@ -26,7 +26,7 @@
 #include "cocos2d.h"
 #include "cocoa/CCArray.h"
 #include "CCScheduler.h"
-
+#include "cocos2dx_extensions_luabinding.h"
 NS_CC_BEGIN
 
 CCLuaEngine* CCLuaEngine::m_defaultEngine = NULL;
@@ -50,6 +50,7 @@ CCLuaEngine::~CCLuaEngine(void)
 bool CCLuaEngine::init(void)
 {
     m_stack = CCLuaStack::create();
+	luaopen_cocos2dx_extensions_luabinding(m_stack->getLuaState());
     m_stack->retain();
     return true;
 }

@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)CocosDenshion\include;$(SolutionDir)scripting\lua\cocos2dx_support;$(SolutionDir)scripting\lua\tolua;$(SolutionDir)scripting\lua\lua;$(SolutionDir)scripting\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)cocos2dx;$(SolutionDir)cocos2dx\include;$(SolutionDir)cocos2dx\kazmath\include;$(SolutionDir)cocos2dx\platform\win32;$(SolutionDir)cocos2dx\platform\third_party\win32;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)CocosDenshion\include;$(SolutionDir)scripting\lua\cocos2dx_support;$(SolutionDir)scripting\lua\tolua;$(SolutionDir)scripting\lua\lua;$(SolutionDir)scripting\lua\src;$(SolutionDir)extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -63,7 +63,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;opengl32.lib;glew32.lib;liblua.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;opengl32.lib;glew32.lib;liblua.lib;lua51.lib;libcurl_imp.lib;pthreadVCE2.lib;libExtensions.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -144,6 +144,7 @@
     <ClInclude Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\LuaCocos2d.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\tolua_fix.h" />
+    <ClInclude Include="cocos2dx_extensions_luabinding.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -155,6 +156,7 @@
     <ClCompile Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\LuaCocos2d.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\tolua_fix.c" />
+    <ClCompile Include="cocos2dx_extensions_luabinding.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
