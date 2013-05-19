@@ -1,7 +1,15 @@
 ProgressBar = class("ProgressBar", CCNodeExtend)
-
+--[[
+	进度条控件类
+					key					描述  						类型
+	optiongs = 	{
+					backgroundSprite	背景SpriteFrameName			string
+					progressSprite		进度条SpriteFrameName		string
+					nPercent			默认的进度值(0 ~ 1)			number
+				}
+--]]
 function ProgressBar:ctor(options)
-	ProgressBar.super.ctor(self)
+	ProgressBar.super.ctor(self, options)
 	
 	self._bgSprite = CCSprite:createWithSpriteFrameName(options.backgroundSprite)
 	self._progressSprite = CCSprite:createWithSpriteFrameName(options.progressSprite)
@@ -29,6 +37,11 @@ function ProgressBar:CCRectUnion(bgRect, progressRect)
 	local height = math.max(bgRect:getMaxY(), progressRect:getMaxY())
 	return CCRect(x, y, width, height)
 end
+
+function ProgressBar:getPercent()
+	return self._nPercent
+end
+
 function ProgressBar:setPercent(percent)
 	
 	assert(percent, "percent is nil")
@@ -42,10 +55,7 @@ function ProgressBar:setPercent(percent)
 	self._progressSprite:setPosition(ccp(self._nProgressPx - ((self._nProgressWidth - percentWidth) * anchorX), self._progressSprite:getPositionY()))
 	
 	self._nPercent = percent
-end
-function ProgressBar:getPercent()
-	return self._nPercent
-end
+end	
 function ProgressBar:setPercentDuration(nPercent, nDuration)
 	self._nDuration = nDuration or 1.2
 	self._nElapsed = 0

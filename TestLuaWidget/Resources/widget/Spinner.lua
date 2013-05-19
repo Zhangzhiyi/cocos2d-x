@@ -1,5 +1,8 @@
 Spinner = class("Spinner", CCNodeExtend)
-
+--[[
+	下拉列表控件类
+	
+--]]
 function Spinner:ctor(options)
 	Spinner.super.ctor(self, options)
 	self._normalSpriteFrame = options.normalSfName and spriteFrameByName(options.normalSfName)
@@ -14,7 +17,7 @@ function Spinner:ctor(options)
 	self._nWidth = self._sprite:getContentSize().width
 	self._nHeight = self._sprite:getContentSize().height
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))			
-	self._nTouchPriority = options.nTouchPriority or 0
+	self._nTouchPriority = options.touchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	

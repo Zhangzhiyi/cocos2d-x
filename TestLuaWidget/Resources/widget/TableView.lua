@@ -1,5 +1,16 @@
 TableView = class("TableView", ScrollView)
-
+--[[
+	TableView列表控件类
+					key					描述  								类型
+	optiongs = 	{	
+					direction			滑动方向(默认为垂直方向)			number
+					viewSize			可视部分窗口大小					CCSize
+					bounceable			是否有弹性效果						booleans
+					touchPriority		触摸事件优先级						number
+					
+					numberOfCellsFunc									
+				}	
+--]]
 function TableView:ctor(options)
 	TableView.super.ctor(self, options)
 	

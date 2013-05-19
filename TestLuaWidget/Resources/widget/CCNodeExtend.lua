@@ -1,5 +1,12 @@
 CCNodeExtend = class("CCNodeExtend")
 
+--[[
+	控件容器类
+					key					描述  						类型
+	options	= 	{
+					isEnabled			是否可用						booleans
+				}					
+--]]
 function CCNodeExtend:ctor(options)
 	self._node = CCNode:create()
     self._layer = CCLayer:create()

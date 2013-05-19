@@ -1,11 +1,27 @@
 ContainerWidget = class ("ContainerWidget", CCNodeExtend)
-
-function ContainerWidget:ctor()
-	ContainerWidget.super.ctor(self)
+--[[
+	控件容器类
+					key					描述  						类型
+	options	= 	{
+					clipingAble			是否能够剪切部分可见		booleans
+					viewSize			剪切部分大小				CCSize
+				}					
+--]]
+function ContainerWidget:ctor(options)
+	ContainerWidget.super.ctor(self, options)
 	self._layer:removeFromParentAndCleanup(true)
 	self._layer = nil
 	self._layer = ClipLayer:create()
 	self._node:addChild(self._layer)
+	
+	if options then
+		if options.clipingAble ~= nil then
+			self:setClipingAble(options.clipingAble)
+		end
+		if options.viewSize then
+			self:setViewSize(options.viewSize)
+		end
+	end
 	
 end
 
@@ -31,6 +47,11 @@ end
 function ContainerWidget:getViewRect()
 	return self._layer:getViewRect()
 end
+--[[
+	容器里ChildNodes垂直排列
+	params:	
+		nPadding	childNode之间的间隙，默认为5
+--]]
 function ContainerWidget:alignItemsVertically(nPadding)
 	nPadding = nPadding or 5
 	local nTotalHeight = nPadding
@@ -63,8 +84,12 @@ function ContainerWidget:alignItemsVertically(nPadding)
 	end
 	self:setContentSize(CCSize(maxWidth, nTotalHeight))		
 end
-
-function ContainerWidget:alignItemsHorizontally()
+--[[
+	容器里ChildNodes平行排列
+	params:	
+		nPadding	childNode之间的间隙，默认为5
+--]]
+function ContainerWidget:alignItemsHorizontally(nPadding)
 	nPadding = nPadding or 5
 	local nTotalWidth = nPadding
 	local array = self._layer:getChildren()

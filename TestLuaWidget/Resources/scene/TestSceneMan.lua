@@ -29,7 +29,7 @@ function TestSceneMan:ctor()
 	button:setScale(2)
 	self._mainLayer:addChild(button._node)
 	
-	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, color = ccORANGE})
+	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, fontColor = ccORANGE})
 	textButton:setPosition(ccp(VisibleRect.center().x, 150))
 	self._mainLayer:addChild(textButton._node)
 	

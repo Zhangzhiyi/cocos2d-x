@@ -1,4 +1,16 @@
 ImageButton = class("ImageButton", CCNodeExtend)
+--[[
+					key				描述  						类型
+	options = {	
+				isEnabled		是否可用						booleans
+				normalSfName	正常状态SpriteFrameName			string
+				pressedSfName	按下状态SpriteFrameName			string
+				disabledSfName	不可用状态SpriteFrameName		string				
+				onClickEvent	点击后的回调方法				function
+				touchPriority		触摸事件优先级				number
+			  }
+				
+--]]
 function ImageButton:ctor(options)
 	ImageButton.super.ctor(self, options)
 	
@@ -18,7 +30,7 @@ function ImageButton:ctor(options)
 	self._nWidth = self._sprite:getContentSize().width
 	self._nHeight = self._sprite:getContentSize().height
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))			
-	self._nTouchPriority = options.nTouchPriority or 0
+	self._nTouchPriority = options.touchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	

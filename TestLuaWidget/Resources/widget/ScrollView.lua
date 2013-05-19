@@ -1,4 +1,14 @@
 ScrollView = class("ScrollView", ContainerWidget)
+--[[
+	可滑动容器类
+						key					描述  							类型
+	optiongs = 	{	
+					direction			滑动方向(默认为垂直方向)			number
+					viewSize			可视部分窗口大小					CCSize
+					bounceable			是否有弹性效果						booleans
+					touchPriority		触摸事件优先级						number
+				}
+--]]
 
 ScrollView.DIRECTION_VERTICAL   = 1
 ScrollView.DIRECTION_HORIZONTAL = 2
@@ -7,7 +17,7 @@ function ScrollView:ctor(options)
 	self._nDirection = options.direction or ScrollView.DIRECTION_VERTICAL		
 	self._viewSize = options.viewSize or VisibleRect._winSize
 	self:setViewSize(self._viewSize)
-	self._nTouchPriority = options.nTouchPriority or -200
+	self._nTouchPriority = options.touchPriority or -200
 	self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	

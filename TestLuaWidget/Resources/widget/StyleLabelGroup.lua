@@ -1,6 +1,6 @@
 StyleLabelGroup = class("StyleLabelGroup", ContainerWidget)
 --[[
-  styleLabels = { key        			介绍          	类型
+  styleLabels = { key        			描述          	类型
 				{str          			显示的文字      string,
 				 fontName     			字体名字        string,
 				 fontSize     			字体大小  	  	number,
