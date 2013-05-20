@@ -27,12 +27,15 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-/* Exported function */
-//TOLUA_API int  tolua_cocos2dx_network_luabinding_open (lua_State* tolua_S);
+
 
 #include "cocos2dx_network_luabinding.h"
 #include "network/CCHTTPRequest.h"
 USING_NS_CC_EXTRA;
+
+/* Exported function */
+TOLUA_API int  tolua_cocos2dx_network_luabinding_open (lua_State* tolua_S);
+
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {

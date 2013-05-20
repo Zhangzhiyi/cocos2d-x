@@ -1,0 +1,2 @@
+$#include "cocos2dx_cliplayer_luabinding.h"
+$pfile "ClipLayer.pkg"

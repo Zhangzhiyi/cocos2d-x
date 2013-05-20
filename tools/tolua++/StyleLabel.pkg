@@ -1,12 +1,12 @@
-class CCStyleLabel : public CCLabelTTF
+class StyleLabel : public CCLabelTTF
 {
-	CCStyleLabel(void);
-	~CCStyleLabel(void);
+	StyleLabel(void);
+	~StyleLabel(void);
 	
-	static CCStyleLabel* create();
-	static CCStyleLabel* create(const char* str, const char* fontName, float fontSize);
+	static StyleLabel* create();
+	static StyleLabel* create(const char* str, const char* fontName, float fontSize);
 
-	void setPerformClickEvent(bool enable);
+	void setPerformClickEnable(bool enable);
 	bool isTouchEnabled();
 	void setTouchEnabled(bool value);
 	void setTouchPriority(int priority);
@@ -19,7 +19,7 @@ class CCStyleLabel : public CCLabelTTF
 	ccColor4F getLineColor(){return m_lineColor;}
 
 	/** Register menu handler script function */
-	void registerScriptClickHandler(int nHandler);
+	void registerScriptClickHandler(LUA_FUNCTION nHandler);
 	void unregisterScriptClickHandler(void);
-	int getScriptClickHandler() { return m_nScriptClickHandler; };
+	LUA_FUNCTION getScriptClickHandler() { return m_nScriptClickHandler; };
 };

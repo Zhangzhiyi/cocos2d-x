@@ -1,22 +1,22 @@
-#ifndef __CC_STYLE_LABEL_H__
-#define __CC_STYLE_LABEL_H__
+#ifndef __STYLE_LABEL_H__
+#define __STYLE_LABEL_H__
 #include "cocos2d.h"
-
+#include "CCLuaEngine.h"
 USING_NS_CC;
 
-class CCStyleLabel : public CCLabelTTF, public CCTargetedTouchDelegate
+class StyleLabel : public CCLabelTTF, public CCTargetedTouchDelegate
 {
 public:
 	
-	CCStyleLabel(void);
-	virtual ~CCStyleLabel(void);
+	StyleLabel(void);
+	virtual ~StyleLabel(void);
 	virtual void onEnter();
 	virtual void onExit();
 	virtual void draw();	
 
-	//CREATE_FUNC(CCStyleLabel);
-	static CCStyleLabel* create();
-	static CCStyleLabel* create(const char* str, const char* fontName, float fontSize);
+	//CREATE_FUNC(StyleLabel);
+	static StyleLabel* create();
+	static StyleLabel* create(const char* str, const char* fontName, float fontSize);
 	virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event);
 	virtual void ccTouchMoved(CCTouch* touch, CCEvent* event);
 	virtual void ccTouchEnded(CCTouch* touch, CCEvent* event);
@@ -37,9 +37,9 @@ public:
 	ccColor4F getLineColor(){return m_lineColor;}
 
 	/** Register menu handler script function */
-	void registerScriptClickHandler(int nHandler);
+	void registerScriptClickHandler(LUA_FUNCTION nHandler);
 	void unregisterScriptClickHandler(void);
-	int getScriptClickHandler() { return m_nScriptClickHandler; };
+	LUA_FUNCTION getScriptClickHandler() { return m_nScriptClickHandler; };
 private:
 	int m_nTouchPriority;
 	bool m_bTouchEnabled;

@@ -116,7 +116,7 @@ function TestSceneMan:ctor()
 	tableView:reloadData()
 	self._mainLayer:addChild(tableView._node)
 	
-	local styleLabel = CCStyleLabel:create("HelloWorld!", "Helvetica", 24)
+	local styleLabel = StyleLabel:create("HelloWorld!", "Helvetica", 24)
 	local function styleLabelClick()
 		CCLuaLog("HelloWorld")
 	end

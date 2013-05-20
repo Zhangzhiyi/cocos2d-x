@@ -190,6 +190,8 @@ local CCObjectTypes = {
     "CCParticleSmoke",
     "CCParticleSnow",
     "CCParticleRain",
+    "ClipLayer",
+    "CCStyleLabel",
     "CCHTTPRequest",
 }
 

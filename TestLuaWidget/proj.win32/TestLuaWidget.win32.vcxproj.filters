@@ -77,9 +77,6 @@
     <ClInclude Include="..\Classes\cocos2dx_support\LuaCocos2d.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CCStyleLabel.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="cocos2dx_extensions_luabinding.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
@@ -96,6 +93,15 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_cliplayer_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StyleLabel.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
   </ItemGroup>
@@ -121,9 +127,6 @@
     <ClCompile Include="..\Classes\cocos2dx_support\LuaCocos2d.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CCStyleLabel.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="cocos2dx_extensions_luabinding.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
@@ -134,6 +137,15 @@
       <Filter>Classes\network</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_cliplayer_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StyleLabel.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,7 +19,7 @@ function StyleLabelGroup:ctor(options)
 	self._styleLabels = options.styleLabels or {}
 	
 	for k,v in ipairs(self._styleLabels) do
-		local styleLabel = CCStyleLabel:create(v.str, v.fontName, v.fontSize)
+		local styleLabel = StyleLabel:create(v.str, v.fontName, v.fontSize)
 		if v.fontColor then
 			styleLabel:setColor(v.fontColor)
 		end

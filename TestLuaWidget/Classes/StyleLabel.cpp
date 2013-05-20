@@ -1,7 +1,7 @@
-#include "CCStyleLabel.h"
+#include "StyleLabel.h"
 #include "CCLuaEngine.h"
 
-CCStyleLabel::CCStyleLabel(void)
+StyleLabel::StyleLabel(void)
 :m_fLineWidth(0.25f)
 ,m_bDrawBottomLine(true)
 ,m_bTouchEnabled(false)
@@ -11,24 +11,24 @@ CCStyleLabel::CCStyleLabel(void)
 	m_lineColor = c;
 }
 
-CCStyleLabel::~CCStyleLabel(void)
+StyleLabel::~StyleLabel(void)
 {
 }
-void CCStyleLabel::setLineColor(ccColor4F lineColor)
+void StyleLabel::setLineColor(ccColor4F lineColor)
 {
 	m_lineColor = lineColor;
 }
-void CCStyleLabel::setLineWidth(float lineWidth)
+void StyleLabel::setLineWidth(float lineWidth)
 {
 	m_fLineWidth = lineWidth;
 }
-void CCStyleLabel::setDrawBottomLine(bool enable)
+void StyleLabel::setDrawBottomLine(bool enable)
 {
 	m_bDrawBottomLine = enable;
 }
-CCStyleLabel* CCStyleLabel::create(void)
+StyleLabel* StyleLabel::create(void)
 {
-	CCStyleLabel * pRet = new CCStyleLabel();
+	StyleLabel * pRet = new StyleLabel();
 	if (pRet && pRet->init())
 	{
 		pRet->autorelease();
@@ -39,9 +39,9 @@ CCStyleLabel* CCStyleLabel::create(void)
 	}
 	return pRet;
 }
-CCStyleLabel* CCStyleLabel::create(const char* str, const char* fontName, float fontSize)
+StyleLabel* StyleLabel::create(const char* str, const char* fontName, float fontSize)
 {
-	CCStyleLabel * pRet = new CCStyleLabel();
+	StyleLabel * pRet = new StyleLabel();
 	if (pRet && pRet->initWithString(str, fontName, fontSize))
 	{
 		pRet->autorelease();
@@ -52,7 +52,7 @@ CCStyleLabel* CCStyleLabel::create(const char* str, const char* fontName, float 
 	}
 	return pRet;
 }
-void CCStyleLabel::draw()
+void StyleLabel::draw()
 {
 	CCLabelTTF::draw();
 	if (m_bDrawBottomLine)
@@ -62,23 +62,23 @@ void CCStyleLabel::draw()
 		ccDrawLine( ccp(0, 0), ccp(getContentSize().width, 0));
 	}
 }
-void CCStyleLabel::onEnter()
+void StyleLabel::onEnter()
 {
 	CCLabelTTF::onEnter();
 	setTouchEnabled(m_bTouchEnabled);
 }
-void CCStyleLabel::onExit()
+void StyleLabel::onExit()
 {
 	CCDirector* pDirector = CCDirector::sharedDirector();
 	pDirector->getTouchDispatcher()->removeDelegate(this);
 	CCLabelTTF::onExit();
 }
-void CCStyleLabel::registerScriptClickHandler(int nHandler)
+void StyleLabel::registerScriptClickHandler(LUA_FUNCTION nHandler)
 {
 	unregisterScriptClickHandler();
 	m_nScriptClickHandler = nHandler;
 }
-void CCStyleLabel::unregisterScriptClickHandler(void)
+void StyleLabel::unregisterScriptClickHandler(void)
 {
 	if (m_nScriptClickHandler)
 	{
@@ -86,12 +86,12 @@ void CCStyleLabel::unregisterScriptClickHandler(void)
 		m_nScriptClickHandler = 0;
 	}
 }
-void CCStyleLabel::registerWithTouchDispatcher()
+void StyleLabel::registerWithTouchDispatcher()
 {
 	CCTouchDispatcher* pDispatcher = CCDirector::sharedDirector()->getTouchDispatcher();
 	pDispatcher->addTargetedDelegate(this, m_nTouchPriority, true);
 }
-void CCStyleLabel::setTouchPriority(int priority)
+void StyleLabel::setTouchPriority(int priority)
 {
 	if (m_nTouchPriority != priority)
 	{
@@ -104,19 +104,19 @@ void CCStyleLabel::setTouchPriority(int priority)
 		}
 	}
 }
-int CCStyleLabel::getTouchPriority()
+int StyleLabel::getTouchPriority()
 {
 	return m_nTouchPriority;
 }
-void CCStyleLabel::setPerformClickEnable(bool enable)
+void StyleLabel::setPerformClickEnable(bool enable)
 {
 	m_bTouchEnabled = enable;
 }
-bool CCStyleLabel::isTouchEnabled()
+bool StyleLabel::isTouchEnabled()
 {
 	return m_bTouchEnabled;
 }
-void CCStyleLabel::setTouchEnabled(bool enabled)
+void StyleLabel::setTouchEnabled(bool enabled)
 {
 		m_bTouchEnabled =enabled;
 		if (m_bRunning)
@@ -131,22 +131,22 @@ void CCStyleLabel::setTouchEnabled(bool enabled)
 			}
 		}
 }
-bool CCStyleLabel::contaisTouchLocation(CCTouch* touch)
+bool StyleLabel::contaisTouchLocation(CCTouch* touch)
 {
 	CCPoint point = m_pParent->convertTouchToNodeSpace(touch);
 	CCRect bBox = this->boundingBox();
 	return bBox.containsPoint(point);
 
 }
-bool CCStyleLabel::ccTouchBegan(CCTouch* touch, CCEvent* event)
+bool StyleLabel::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
 	return contaisTouchLocation(touch);
 }
-void CCStyleLabel::ccTouchMoved(CCTouch* touch, CCEvent* event)
+void StyleLabel::ccTouchMoved(CCTouch* touch, CCEvent* event)
 {
 
 }
-void CCStyleLabel::ccTouchEnded(CCTouch* touch, CCEvent* event)
+void StyleLabel::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {
 	if (contaisTouchLocation(touch))
 	{
@@ -157,7 +157,7 @@ void CCStyleLabel::ccTouchEnded(CCTouch* touch, CCEvent* event)
 			if (nHandler)
 			{
 				CCLuaStack* m_stack =  CCLuaEngine::defaultEngine()->getLuaStack();
-				m_stack->pushCCObject(this, "CCStyleLabel");
+				m_stack->pushCCObject(this, "StyleLabel");
 				int ret = m_stack->executeFunctionByHandler(nHandler, 1);
 				m_stack->clean();
 			}
