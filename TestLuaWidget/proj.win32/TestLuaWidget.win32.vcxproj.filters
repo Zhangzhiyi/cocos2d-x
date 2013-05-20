@@ -11,6 +11,9 @@
     <Filter Include="Classes\cocos2dx_support">
       <UniqueIdentifier>{a6763e96-a3c0-4ad1-82a8-326748e50a39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\network">
+      <UniqueIdentifier>{3f21073b-a9a6-4257-a735-9617ab2c8d98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\TestLuaWidget.ico">
@@ -80,6 +83,21 @@
     <ClInclude Include="cocos2dx_extensions_luabinding.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\network\CCHTTPRequest.h">
+      <Filter>Classes\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\CCHTTPRequestDelegate.h">
+      <Filter>Classes\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\CCNetwork.h">
+      <Filter>Classes\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_extra.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -107,6 +125,15 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="cocos2dx_extensions_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp">
+      <Filter>Classes\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\CCNetwork.cpp">
+      <Filter>Classes\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
   </ItemGroup>

@@ -190,6 +190,7 @@ local CCObjectTypes = {
     "CCParticleSmoke",
     "CCParticleSnow",
     "CCParticleRain",
+    "CCHTTPRequest",
 }
 
 -- register CCObject types

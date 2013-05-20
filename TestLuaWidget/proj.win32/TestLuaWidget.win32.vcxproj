@@ -140,10 +140,15 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\CCStyleLabel.h" />
     <ClInclude Include="..\Classes\ClipLayer.h" />
+    <ClInclude Include="..\Classes\cocos2dx_extra.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\CCLuaEngine.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.h" />
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\LuaCocos2d.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\tolua_fix.h" />
+    <ClInclude Include="..\Classes\network\CCHTTPRequest.h" />
+    <ClInclude Include="..\Classes\network\CCHTTPRequestDelegate.h" />
+    <ClInclude Include="..\Classes\network\CCNetwork.h" />
     <ClInclude Include="cocos2dx_extensions_luabinding.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
@@ -154,8 +159,11 @@
     <ClCompile Include="..\Classes\ClipLayer.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\CCLuaEngine.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.cpp" />
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_network_luabinding.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\LuaCocos2d.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\tolua_fix.c" />
+    <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp" />
+    <ClCompile Include="..\Classes\network\CCNetwork.cpp" />
     <ClCompile Include="cocos2dx_extensions_luabinding.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

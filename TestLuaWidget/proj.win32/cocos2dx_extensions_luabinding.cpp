@@ -16,10 +16,7 @@
 
 #include "tolua++.h"
 
-/* Exported function */
-TOLUA_API int  tolua_Cocos2d2_open (lua_State* tolua_S);
-
-#include "LuaCocos2d.h"
+//#include "LuaCocos2d.h"
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus

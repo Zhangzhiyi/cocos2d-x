@@ -32,6 +32,18 @@ local function main()
     collectgarbage("setpause", 100)
     collectgarbage("setstepmul", 5000)
 	
+	local url = "http://httpbin.org/ip"
+	local function callback(event)
+		local request = event.request
+		if request:getErrorCode() == 0 and request:getResponseStatusCode() == 200 then
+			local length = request:getResponseDataLength()
+			local result = request:getResponseDataLua()
+			CCLuaLog(result)
+		end
+	end
+	local request = CCHTTPRequest:createWithUrlLua(callback, url, kCCHTTPRequestMethodGET);
+	request:start()
+	
 	CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("base.plist")
 	
 	local testSceneMan = Global.CreateTestSceneMan()

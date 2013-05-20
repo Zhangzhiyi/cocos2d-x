@@ -1,2 +1,0 @@
-$#include "LuaCocos2d.h"
-$pfile "CCControl.pkg"

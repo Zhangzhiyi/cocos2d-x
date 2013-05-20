@@ -1,0 +1,89 @@
+#define kCCHTTPRequestMethodGET  0
+#define kCCHTTPRequestMethodPOST 1
+
+#define kCCHTTPRequestAcceptEncodingIdentity 0
+#define kCCHTTPRequestAcceptEncodingGzip     1
+#define kCCHTTPRequestAcceptEncodingDeflate  2
+
+#define kCCHTTPRequestStateIdle       0
+#define kCCHTTPRequestStateCleared    1
+#define kCCHTTPRequestStateInProgress 2
+#define kCCHTTPRequestStateCompleted  3
+#define kCCHTTPRequestStateCancelled  4
+#define kCCHTTPRequestStateFailed     5
+
+class CCHTTPRequest : public CCObject
+{
+#if CC_LUA_ENGINE_ENABLED > 0
+    static CCHTTPRequest* createWithUrlLua(LUA_FUNCTION listener,
+                                           const char* url,
+                                           int method = kCCHTTPRequestMethodGET);
+#endif
+    
+    /** @brief Set request url. */
+    void setRequestUrl(const char* url);
+    
+    /** @brief Add a custom header to the request. */
+    void addRequestHeader(const char* header);
+    
+    /** @brief Add a POST variable to the request, POST only. */
+    void addPOSTValue(const char* key, const char* value);
+    
+    /** @brief Set POST data to the request body, POST only. */
+    void setPOSTData(const char* data);
+    
+    /** @brief Set accept encoding. */
+    void setAcceptEncoding(int acceptEncoding);
+    
+    /** @brief Number of seconds to wait before timing out - default is 10. */
+    void setTimeout(float timeout);
+    
+    /** @brief Execute an asynchronous request. */
+    void start(void);
+    
+    /** @brief Cancel an asynchronous request, clearing all delegates first. */
+    void cancel(void);
+    
+    /** @brief Get the request state. */
+    int getState(void) {
+        return m_state;
+    }
+    
+    /** @brief Return HTTP status code. */
+    int getResponseStatusCode(void) {
+        CCAssert(m_state == kCCHTTPRequestStateCompleted, "Request not completed");
+        return m_responseCode;
+    }
+    
+    /** @brief Return HTTP response headers. */
+    //const CCHTTPRequestHeaders& getResponseHeaders(void);
+    
+    /** @brief Returns the contents of the result. */
+    const string getResponseString(void);
+    
+    /** @brief Alloc memory block, return response data. use free() release memory block */
+    void* getResponseData(void);
+    
+#if CC_LUA_ENGINE_ENABLED > 0
+    int getResponseDataLua(void);
+#endif
+    
+    /** @brief Get response data length (bytes). */
+    int getResponseDataLength(void) {
+        CCAssert(m_state == kCCHTTPRequestStateCompleted, "Request not completed");
+        return m_responseDataLength;
+    }
+    
+    /** @brief Save response data to file. */
+    int saveResponseData(const char* filename);
+    
+    /** @brief Get error code. */
+    int getErrorCode(void) {
+        return m_errorCode;
+    }
+    
+    /** @brief Get error message. */
+    const char* getErrorMessage(void) {
+        return m_errorMessage.c_str();
+    }
+};
