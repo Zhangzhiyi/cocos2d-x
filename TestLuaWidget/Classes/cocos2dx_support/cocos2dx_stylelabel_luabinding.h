@@ -6,8 +6,6 @@ extern "C" {
 #include "tolua_fix.h"
 }
 
-#include <map>
-#include <string>
 #include "tolua_fix.h"
 #include "cocos2d.h"
 #include "CCLuaEngine.h"

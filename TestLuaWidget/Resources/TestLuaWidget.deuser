@@ -21,25 +21,19 @@
     <file>
       <filename>widget\ProgressBar.lua</filename>
       <breakpoint>
-        <line>87</line>
-      </breakpoint>
-    </file>
-    <file>
-      <filename>widget\Spinner.lua</filename>
-      <breakpoint>
-        <line>25</line>
-      </breakpoint>
-    </file>
-    <file>
-      <filename>scene\TestSceneMan.lua</filename>
-      <breakpoint>
-        <line>144</line>
+        <line>86</line>
       </breakpoint>
     </file>
     <file>
       <filename>hello.lua</filename>
       <breakpoint>
         <line>20</line>
+      </breakpoint>
+      <breakpoint>
+        <line>43</line>
+      </breakpoint>
+      <breakpoint>
+        <line>36</line>
       </breakpoint>
     </file>
   </files>
