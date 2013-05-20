@@ -1,13 +1,14 @@
 ImageButton = class("ImageButton", CCNodeExtend)
 --[[
-					key				描述  						类型
+		图片按钮
+					key				描述  							类型
 	options = {	
-				isEnabled		是否可用						booleans
-				normalSfName	正常状态SpriteFrameName			string
-				pressedSfName	按下状态SpriteFrameName			string
-				disabledSfName	不可用状态SpriteFrameName		string				
-				onClickEvent	点击后的回调方法				function
-				touchPriority		触摸事件优先级				number
+				isEnabled			是否可用						booleans
+				normalSfName		正常状态SpriteFrameName			string
+				pressedSfName		按下状态SpriteFrameName			string
+				disabledSfName		不可用状态SpriteFrameName		string				
+				onClickEvent		点击后的回调方法				function
+				touchPriority		触摸事件优先级					number
 			  }
 				
 --]]

@@ -1,14 +1,19 @@
 TableView = class("TableView", ScrollView)
 --[[
 	TableView列表控件类
-					key					描述  								类型
+					key							描述  								类型
 	optiongs = 	{	
-					direction			滑动方向(默认为垂直方向)			number
-					viewSize			可视部分窗口大小					CCSize
-					bounceable			是否有弹性效果						booleans
-					touchPriority		触摸事件优先级						number
+					direction					滑动方向(默认为垂直方向)			number
+					viewSize					可视部分窗口大小					CCSize
+					bounceable					是否有弹性效果						booleans
+					touchPriority				触摸事件优先级						number
 					
-					numberOfCellsFunc									
+					numberOfCellsFunc			返回列表个数接口					function
+					cellSizeForIndexFunc		返回列表下标的CCSize接口			function
+					tableCellAtIndexFunc		返回列表下标的Cell接口				function
+					tableCellHighlightFunc		触摸当前列表项显示高亮的接口		function
+					tableCellUnhighlightFunc	高亮的列表项变为不高亮的接口		function
+					tableCellTouchedFunc		点击当前列表项的触发事件接口		function
 				}	
 --]]
 function TableView:ctor(options)

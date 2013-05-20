@@ -1,5 +1,18 @@
 CheckBox = class("CheckBox", CCNodeExtend)
---[[    --]]
+--[[   
+		开关按钮控件
+							key				描述  									类型
+	optiongs = 	{
+					onEnSfName				选中状态可用的SpriteFrameName			string
+					offEnSfName				没选中状态可用的SpriteFrameName			string
+					onDisSfName				选中状态不可用的SpriteFrameName			string
+					offDisSfName			没选中状态不可用的SpriteFrameName		string
+					isChecked				默认是否选中状态						booleans
+					onCheckEvent			状态改变的回调方法						function
+					touchPriority			触摸事件优先级							number
+				}
+	
+ --]]
 function CheckBox:ctor(options)
 	CheckBox.super.ctor(self, options)
     self._onEnSpriteFrame = spriteFrameByName(options.onEnSfName)

@@ -5,7 +5,7 @@ ProgressBar = class("ProgressBar", CCNodeExtend)
 	optiongs = 	{
 					backgroundSprite	背景SpriteFrameName			string
 					progressSprite		进度条SpriteFrameName		string
-					nPercent			默认的进度值(0 ~ 1)			number
+					percent				默认的进度值(0 ~ 1)			number
 				}
 --]]
 function ProgressBar:ctor(options)
@@ -27,7 +27,7 @@ function ProgressBar:ctor(options)
 	self._nProgressWidth = self._progressSprite:getContentSize().width
 	self._nProgressPx = self._progressSprite:getPositionX()
 	
-	self._nPercent = options.nPercent or 0
+	self._nPercent = options.percent or 0
 	self:setPercent(self._nPercent)
 end	
 function ProgressBar:CCRectUnion(bgRect, progressRect)

@@ -1,6 +1,7 @@
 TextButton = class("TextButton", CCNodeExtend)
 
 --[[
+		文字按钮
 					key				描述  							类型
 	options = {	fontSize			字体大小						number
 				fontName			字体名字						string

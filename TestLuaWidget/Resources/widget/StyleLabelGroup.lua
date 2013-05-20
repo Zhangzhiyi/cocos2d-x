@@ -1,15 +1,16 @@
 StyleLabelGroup = class("StyleLabelGroup", ContainerWidget)
 --[[
-  styleLabels = { key        			描述          	类型
-				{str          			显示的文字      string,
-				 fontName     			字体名字        string,
-				 fontSize     			字体大小  	  	number,
-				 fontColor				字体颜色		ccColor3B,
-				 drawBottomLine			是否画下划线	booleans,
-				 lineWidth              下划线宽度      number,				
-				 lineColor				下划线颜色		ccColor4F,
-				 performClickEnable      是否可以点击   booleans,
-				 styleLabelClickFunc     点击回调方法   Function,
+	富文本控件
+  styleLabels = { key        				描述          				类型
+				{str          				显示的文字      			string,
+				 fontName     				字体名字        			string,
+				 fontSize     				字体大小  	  				number,
+				 fontColor					字体颜色					ccColor3B,
+				 drawBottomLine				是否画下划线				booleans,
+				 lineWidth              	下划线宽度      			number,				
+				 lineColor					下划线颜色					ccColor4F,
+				 performClickEnable      	是否可以点击   			booleans,
+				 styleLabelClickFunc     	点击回调方法   			Function,
 				 }
 			}
 --]]
