@@ -8,15 +8,8 @@
 ** Lua binding: Cocos2d2
 ** Generated automatically by tolua++-1.0.92 on 05/18/13 11:27:47.
 */
-
-#ifndef __cplusplus
-#include "stdlib.h"
-#endif
-#include "string.h"
-
-#include "tolua++.h"
-
-//#include "LuaCocos2d.h"
+/* Exported function */
+TOLUA_API int  tolua_cocos2dx_extensions_luabinding_open (lua_State* tolua_S);
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus

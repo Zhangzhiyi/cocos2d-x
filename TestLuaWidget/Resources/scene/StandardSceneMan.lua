@@ -72,6 +72,7 @@ end
 -- ·µ»Ø¼üÏìÓ¦
 function StandardSceneMan:onKeyBackClicked()
 	if not self:keyBackCloseLastDialog() then
+		CCDirector:sharedDirector():endToLua()
 		--[[local function func1()
 			self._mainScene:runAction(CCSequence:createWithTwoActions(
 			CCDelayTime:create(0.2),
@@ -96,7 +97,7 @@ end
 function StandardSceneMan:reorderDialog(dialog)
 	for i,v in ipairs(self._dialogList) do
 		if v == dialog then		
-			v:setLayerTouchPriority(kCCMenuHandlerPriority - 2)
+			v:setLayerTouchPriority(kCCMenuHandlerPriority - 1)
 			self._mainScene:reorderChild(v._mainLayer, INT_MAX)
 		else 
 			v:setLayerTouchPriority(kCCMenuHandlerPriority)

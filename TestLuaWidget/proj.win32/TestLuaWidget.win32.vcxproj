@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.h" />
     <ClInclude Include="..\Classes\StyleLabel.h" />
     <ClInclude Include="..\Classes\ClipLayer.h" />
@@ -151,12 +152,12 @@
     <ClInclude Include="..\Classes\network\CCHTTPRequest.h" />
     <ClInclude Include="..\Classes\network\CCHTTPRequestDelegate.h" />
     <ClInclude Include="..\Classes\network\CCNetwork.h" />
-    <ClInclude Include="cocos2dx_extensions_luabinding.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.cpp" />
     <ClCompile Include="..\Classes\StyleLabel.cpp" />
     <ClCompile Include="..\Classes\ClipLayer.cpp" />
@@ -168,7 +169,6 @@
     <ClCompile Include="..\Classes\cocos2dx_support\tolua_fix.c" />
     <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp" />
     <ClCompile Include="..\Classes\network\CCNetwork.cpp" />
-    <ClCompile Include="cocos2dx_extensions_luabinding.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

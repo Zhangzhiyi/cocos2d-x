@@ -15,6 +15,10 @@ require "widget/ScrollView"
 require "widget/TableView"
 require "widget/StyleLabelGroup"
 require "widget/Spinner"
+require "platform/PlatformBase"
+require "platform/PlatformAndroid"
+require "platform/PlatformIphone"
+require "platform/PlatformWin"
 
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)

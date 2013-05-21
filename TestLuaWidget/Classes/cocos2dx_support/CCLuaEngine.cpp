@@ -26,10 +26,10 @@
 #include "cocos2d.h"
 #include "cocoa/CCArray.h"
 #include "CCScheduler.h"
-#include "cocos2dx_extensions_luabinding.h"
 #include "cocos2dx_network_luabinding.h"
 #include "cocos2dx_cliplayer_luabinding.h"
 #include "cocos2dx_stylelabel_luabinding.h"
+#include "cocos2dx_extensions_luabinding.h"
 NS_CC_BEGIN
 
 CCLuaEngine* CCLuaEngine::m_defaultEngine = NULL;

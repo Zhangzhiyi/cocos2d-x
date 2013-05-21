@@ -76,7 +76,7 @@ function DialogLayerMan:registerScriptTouchHandler(bMultiTouches, nTouchPriority
 end
 function DialogLayerMan:unregisterScriptTouchHandler()
 	self._mainLayer:setTouchEnabled(false)
-	--self._mainLayer:unregisterScriptTouchHandler()
+	self._mainLayer:unregisterScriptTouchHandler()
 end
 --改变触摸优先级，重新注册
 function DialogLayerMan:setLayerTouchPriority(nTouchPriority)

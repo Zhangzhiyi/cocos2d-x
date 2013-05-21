@@ -77,9 +77,6 @@
     <ClInclude Include="..\Classes\cocos2dx_support\LuaCocos2d.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
-    <ClInclude Include="cocos2dx_extensions_luabinding.h">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\network\CCHTTPRequest.h">
       <Filter>Classes\network</Filter>
     </ClInclude>
@@ -102,6 +99,9 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
   </ItemGroup>
@@ -127,9 +127,6 @@
     <ClCompile Include="..\Classes\cocos2dx_support\LuaCocos2d.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
-    <ClCompile Include="cocos2dx_extensions_luabinding.cpp">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp">
       <Filter>Classes\network</Filter>
     </ClCompile>
@@ -146,6 +143,9 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
   </ItemGroup>
