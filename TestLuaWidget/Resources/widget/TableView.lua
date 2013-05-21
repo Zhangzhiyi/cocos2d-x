@@ -3,10 +3,10 @@ TableView = class("TableView", ScrollView)
 	TableView列表控件类
 					key							描述  								类型
 	optiongs = 	{	
-					direction					滑动方向(默认为垂直方向)			number
+					nDirection					滑动方向(默认为垂直方向)			number
 					viewSize					可视部分窗口大小					CCSize
-					bounceable					是否有弹性效果						booleans
-					touchPriority				触摸事件优先级						number
+					bBounceable					是否有弹性效果						booleans
+					nTouchPriority				触摸事件优先级						number
 					
 					numberOfCellsFunc			返回列表个数接口					function
 					cellSizeForIndexFunc		返回列表下标的CCSize接口			function

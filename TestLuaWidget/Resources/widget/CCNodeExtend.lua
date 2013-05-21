@@ -4,7 +4,7 @@ CCNodeExtend = class("CCNodeExtend")
 	控件容器类
 					key					描述  						类型
 	options	= 	{
-					isEnabled			是否可用						booleans
+					bEnabled			是否可用						booleans
 				}					
 --]]
 function CCNodeExtend:ctor(options)
@@ -17,10 +17,10 @@ function CCNodeExtend:ctor(options)
 	self:setAnchorPoint(CCPoint05)	
 	
 	--enable默认为true
-	--注意：self._bEnabled = options.isEnabled or true ,当options.isEnabled为false的时候，还是返回true，错误
+	--注意：self._bEnabled = options.bEnabled or true ,当options.bEnabled为false的时候，还是返回true，错误
 	if options then
-		if options.isEnabled ~= nil then
-			self._bEnabled = options.isEnabled
+		if options.bEnabled ~= nil then
+			self._bEnabled = options.bEnabled
 		else 
 			self._bEnabled = true
 		end	
@@ -73,6 +73,9 @@ function CCNodeExtend:registerScriptTouchHandler(nTouchPriority, bSwallowsTouche
         end
     end
 	self._layer:registerScriptTouchHandler(onTouch, false, nTouchPriority, bSwallowsTouches)
+end
+function CCNodeExtend:scheduleUpdateWithPriorityLua(nHandler,nPriority)
+	self._node:scheduleUpdateWithPriorityLua(nHandler, nPriority)
 end
 function CCNodeExtend:addChild(child, zOrder)
 	if zOrder then

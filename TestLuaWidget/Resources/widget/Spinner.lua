@@ -3,13 +3,13 @@ Spinner = class("Spinner", CCNodeExtend)
 	下拉列表控件类
 						key					描述  									类型
 	optiongs = 	{
-					isEnabled				是否可用								booleans
+					bEnabled				是否可用								booleans
 					normalSfName			正常状态SpriteFrameName					string
 					pressedSfName			按下状态SpriteFrameName					string
 					disabledSfName			不可用状态SpriteFrameName				string
-					touchPriority			触摸事件优先级							number
+					nTouchPriority			触摸事件优先级							number
 					values					下拉列表显示的字符串数组				table
-					select					默认选中的字符串数组下标				number
+					nSelect					默认选中的字符串数组下标				number
 					onValueChangeEvent		点击下拉列表改变选中项事件回调方法		function
 					
 				}
@@ -28,12 +28,12 @@ function Spinner:ctor(options)
 	self._nWidth = self._sprite:getContentSize().width
 	self._nHeight = self._sprite:getContentSize().height
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))			
-	self._nTouchPriority = options.touchPriority or 0
+	self._nTouchPriority = options.nTouchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	
 	self._values = options.values
-	self._nSelect = options.select or 1
+	self._nSelect = options.nSelect or 1
 	
 	self._selectLabel = CCLabelTTF:create(self._values[self._nSelect], DEFAULT_TTF_FONT, DEFAULT_TTF_FONT_SIZE)
 	self._selectLabel:setAnchorPoint(ccp(0, 0.5))

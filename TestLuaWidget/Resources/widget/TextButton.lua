@@ -3,21 +3,21 @@ TextButton = class("TextButton", CCNodeExtend)
 --[[
 		文字按钮
 					key				描述  							类型
-	options = {	fontSize			字体大小						number
+	options = {	nFontSize			字体大小						number
 				fontName			字体名字						string
 				fontColor			字体颜色						ccColor3B
 				strLabel			显示的字符串					string				
-				isEnabled			是否可用						booleans
+				bEnabled			是否可用						booleans
 				onClickEvent		点击后的回调方法				function
-				scale				点击缩放系数					number
-				touchPriority		触摸事件优先级					number
+				nScale				点击缩放系数					number
+				nTouchPriority		触摸事件优先级					number
 			  }
 				
 --]]
 function TextButton:ctor(options)
 	TextButton.super.ctor(self, options)
 	
-	self._nFontSize = options.fontSize or DEFAULT_TTF_FONT_SIZE
+	self._nFontSize = options.nFontSize or DEFAULT_TTF_FONT_SIZE
 	self._strFontName = options.fontName or DEFAULT_TTF_FONT
 	self._strLabel = options.strLabel or ""
 	self._labelTTF = CCLabelTTF:create(self._strLabel, self._strFontName, self._nFontSize)
@@ -30,12 +30,12 @@ function TextButton:ctor(options)
 	self._nWidth = self._labelTTF:getContentSize().width
 	self._nHeight = self._labelTTF:getContentSize().height
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))		
-	self._nTouchPriority = options.touchPriority or 0
+	self._nTouchPriority = options.nTouchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	
 	self._clickFunc = options.onClickEvent
-	self._nScale = options.scale or 1.15
+	self._nScale = options.nScale or 1.15
 end
 
 function TextButton:setString(strMsg)

@@ -129,8 +129,8 @@ function TestSceneMan:ctor()
 		CCLuaLog("zhangzhiyi")
 	end	
 	local styleLabelTable = {styleLabels = 
-									{{str = "My Name is:", fontName = "Helvetica", fontSize = 20, drawBottomLine = false},
-									 {str = "zhangzhiyi", fontName = "Helvetica", fontSize = 20, fontColor = ccc3(255,0,0), lineColor = ccc4f(255,0,0,255), drawBottomLine = true, performClickEnable = true, styleLabelClickFunc = labelClick}}}
+									{{strLabel = "My Name is:", fontName = "Helvetica", nFontSize = 20, bDrawBottomLine = false},
+									 {strLabel = "zhangzhiyi", fontName = "Helvetica", nFontSize = 20, fontColor = ccc3(255,0,0), lineColor = ccc4f(255,0,0,255), bDrawBottomLine = true, bPerformClickEnable = true, styleLabelClickFunc = labelClick}}}
 	local styleLabelGroup = StyleLabelGroup.new(styleLabelTable)
 	styleLabelGroup:setPosition(ccp(300, 430))
 	self._mainLayer:addChild(styleLabelGroup._node)

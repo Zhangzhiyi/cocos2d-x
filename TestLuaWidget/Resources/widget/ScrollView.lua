@@ -3,10 +3,10 @@ ScrollView = class("ScrollView", ContainerWidget)
 	可滑动容器类
 						key					描述  							类型
 	optiongs = 	{	
-					direction			滑动方向(默认为垂直方向)			number
+					nDirection			滑动方向(默认为垂直方向)			number
 					viewSize			可视部分窗口大小					CCSize
-					bounceable			是否有弹性效果						booleans
-					touchPriority		触摸事件优先级						number
+					bBounceable			是否有弹性效果						booleans
+					nTouchPriority		触摸事件优先级						number
 				}
 --]]
 
@@ -14,10 +14,10 @@ ScrollView.DIRECTION_VERTICAL   = 1
 ScrollView.DIRECTION_HORIZONTAL = 2
 function ScrollView:ctor(options)
 	ScrollView.super.ctor(self)
-	self._nDirection = options.direction or ScrollView.DIRECTION_VERTICAL		
+	self._nDirection = options.nDirection or ScrollView.DIRECTION_VERTICAL		
 	self._viewSize = options.viewSize or VisibleRect._winSize
 	self:setViewSize(self._viewSize)
-	self._nTouchPriority = options.touchPriority or -200
+	self._nTouchPriority = options.nTouchPriority or -200
 	self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
 	
@@ -27,8 +27,8 @@ function ScrollView:ctor(options)
 	self._container:setPosition(CCPointZero)
 	self:addChild(self._container)	
 	
-	if options.bounceable ~= nil then
-		self._bBounceable = options.bounceable
+	if options.bBounceable ~= nil then
+		self._bBounceable = options.bBounceable
 	else 
 		self._bBounceable = true
 	end

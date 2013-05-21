@@ -3,7 +3,7 @@ ContainerWidget = class ("ContainerWidget", CCNodeExtend)
 	控件容器类
 					key					描述  						类型
 	options	= 	{
-					clipingAble			是否能够剪切部分可见		booleans
+					bClipingAble		是否能够剪切部分可见		booleans
 					viewSize			剪切部分大小				CCSize
 				}					
 --]]
@@ -15,8 +15,8 @@ function ContainerWidget:ctor(options)
 	self._node:addChild(self._layer)
 	
 	if options then
-		if options.clipingAble ~= nil then
-			self:setClipingAble(options.clipingAble)
+		if options.bClipingAble ~= nil then
+			self:setClipingAble(options.bClipingAble)
 		end
 		if options.viewSize then
 			self:setViewSize(options.viewSize)

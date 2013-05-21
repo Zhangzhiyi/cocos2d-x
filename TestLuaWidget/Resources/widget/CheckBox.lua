@@ -7,9 +7,9 @@ CheckBox = class("CheckBox", CCNodeExtend)
 					offEnSfName				没选中状态可用的SpriteFrameName			string
 					onDisSfName				选中状态不可用的SpriteFrameName			string
 					offDisSfName			没选中状态不可用的SpriteFrameName		string
-					isChecked				默认是否选中状态						booleans
+					bChecked				默认是否选中状态						booleans
 					onCheckEvent			状态改变的回调方法						function
-					touchPriority			触摸事件优先级							number
+					nTouchPriority			触摸事件优先级							number
 				}
 	
  --]]
@@ -20,7 +20,7 @@ function CheckBox:ctor(options)
     self._onDisSpriteFrame = spriteFrameByName(options.onDisSfName)
     self._offDisSpriteFrame = spriteFrameByName(options.offDisSfName) 
   	
-    self._bChecked = options.isChecked or false
+    self._bChecked = options.bChecked or false
 	
 	self._checkedFunc = options.onCheckEvent
     self._label = CCLabelTTF:create(options.strMsg, DEFAULT_TTF_FONT, DEFAULT_TTF_FONT_SIZE)
@@ -42,7 +42,7 @@ function CheckBox:ctor(options)
     end		
 	self:setContentSize(CCSize(self._nWidth, self._nHeight))	
     	
-    self._nTouchPriority = options.touchPriority or 0
+    self._nTouchPriority = options.nTouchPriority or 0
     self:registerScriptTouchHandler(self._nTouchPriority, true)
 	self:setTouchEnabled(true)
     
