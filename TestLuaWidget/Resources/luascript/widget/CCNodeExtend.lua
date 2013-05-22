@@ -1,7 +1,7 @@
 CCNodeExtend = class("CCNodeExtend")
 
 --[[
-	控件容器类
+	控件基类
 					key					描述  						类型
 	options	= 	{
 					bEnabled			是否可用						booleans

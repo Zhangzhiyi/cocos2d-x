@@ -4,6 +4,10 @@
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "cocos2dx_support/luaj/LuaJavaBridge.h"
+#endif
+
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -45,11 +49,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     // register lua engine
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-
+	
 	#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-			LuaJavaBridge::luabindingOpen(pEngine->getLuaState());
+			LuaJavaBridge::luabindingOpen(pEngine->getLuaStack()->getLuaState());
 	#endif
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("luascript/hello.lua");
+    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("luascript/Global.lua");
     pEngine->executeScriptFile(path.c_str());
 
     return true;

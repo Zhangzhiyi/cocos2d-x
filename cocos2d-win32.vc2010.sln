@@ -110,7 +110,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSimpleGame.win32", "Tes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestMemoryMan.win32", "TestMemoryMan\proj.win32\TestMemoryMan.win32.vcxproj", "{39978557-CC8A-4247-A773-E69E78FE6023}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloCpp", "HelloCpp\proj.win32\HelloCpp.vcxproj", "{4E2E3F3C-BD8D-4151-94F1-F51561A260CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexasHoldEm.win32", "E:\TexasHoldEm\trunk\src\client\TexasHoldEm.win32.vcxproj", "{DC54980A-2A53-4199-BE93-D7CE8029E1EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -210,10 +210,10 @@ Global
 		{39978557-CC8A-4247-A773-E69E78FE6023}.Debug|Win32.Build.0 = Debug|Win32
 		{39978557-CC8A-4247-A773-E69E78FE6023}.Release|Win32.ActiveCfg = Release|Win32
 		{39978557-CC8A-4247-A773-E69E78FE6023}.Release|Win32.Build.0 = Release|Win32
-		{4E2E3F3C-BD8D-4151-94F1-F51561A260CE}.Debug|Win32.ActiveCfg = Debug|Win32
-		{4E2E3F3C-BD8D-4151-94F1-F51561A260CE}.Debug|Win32.Build.0 = Debug|Win32
-		{4E2E3F3C-BD8D-4151-94F1-F51561A260CE}.Release|Win32.ActiveCfg = Release|Win32
-		{4E2E3F3C-BD8D-4151-94F1-F51561A260CE}.Release|Win32.Build.0 = Release|Win32
+		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Debug|Win32.Build.0 = Debug|Win32
+		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Release|Win32.ActiveCfg = Release|Win32
+		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

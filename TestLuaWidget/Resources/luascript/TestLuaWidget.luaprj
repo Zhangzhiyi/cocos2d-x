@@ -3,7 +3,7 @@
 <Project Name="TestLuaWidget.luaprj" >
     <Filter Name="luascript" >
         <LuaFile RelativePath=".\functions.lua" />
-        <LuaFile RelativePath=".\hello.lua" />
+        <LuaFile RelativePath=".\Global.lua" />
         <LuaFile RelativePath=".\UITools.lua" />
         <LuaFile RelativePath=".\VisibleRect.lua" />
         <Filter Name="dialog" >
@@ -34,5 +34,6 @@
             <LuaFile RelativePath=".\widget\TableView.lua" />
             <LuaFile RelativePath=".\widget\TextButton.lua" />
         </Filter>
+        <LuaFile RelativePath=".\luaj.lua" />
     </Filter>
 </Project>

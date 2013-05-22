@@ -20,10 +20,13 @@ LOCAL_SRC_FILES := hellolua/main.cpp \
 		   ../../Classes/cocos2dx_support/Cocos2dxLuaLoader.cpp   \
 		   ../../Classes/cocos2dx_support/LuaCocos2d.cpp   \
 		   ../../Classes/cocos2dx_support/tolua_fix.c   \
+		   ../../Classes/cocos2dx_support/luaj/LuaJavaBridge.cpp   \
+		   ../../Classes/cocos2dx_support/luaj/com_qeeplay_frameworks_LuaJavaBridge.cpp   \
 
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 		    $(LOCAL_PATH)/../../Classes/cocos2dx_support \
+		    $(LOCAL_PATH)/../../Classes/cocos2dx_support/luaj \
 		    $(LOCAL_PATH)/../../Classes/network \
 			
 LOCAL_STATIC_LIBRARIES := curl_static_prebuilt

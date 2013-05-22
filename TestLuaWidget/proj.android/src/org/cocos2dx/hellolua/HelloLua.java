@@ -25,11 +25,17 @@ package org.cocos2dx.hellolua;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
+import com.qeeplay.frameworks.LuaJavaBridge;
+
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 
 public class HelloLua extends Cocos2dxActivity{
+	
+	private static Handler mHandler = new Handler();
+	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 	}
@@ -40,8 +46,33 @@ public class HelloLua extends Cocos2dxActivity{
 	
 	static {
         System.loadLibrary("hellolua");
-   }
+    }
+	/**测试lua调用java方法，后面跟的是测试参数**/
+	public static String testLuaCallJava(int i, float f, boolean b1, boolean b2, String str){
+		return "Lua call Java function Successful!";
+	}
+	public static void testLuaCallJava2(final int luaFunctionId, int i, String str, boolean b){
+		
+		mHandler.postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				((Cocos2dxActivity)getContext()).runOnGLThread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						//测试Java调用Lua的函数
+						LuaJavaBridge.callLuaFunctionWithString(luaFunctionId, "java call lua successful!");
+						LuaJavaBridge.releaseLuaFunction(luaFunctionId);
+					}
+				});
+			}
+		}, 4000);
+	}
 }
+
 
 class LuaGLSurfaceView extends Cocos2dxGLSurfaceView{
 	

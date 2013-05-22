@@ -32,7 +32,7 @@ function TestSceneMan:ctor()
 	local function update()
 		CCLuaLog("update")		
 	end
-	button:scheduleUpdateWithPriorityLua(update, 0)
+	--button:scheduleUpdateWithPriorityLua(update, 0)
 	
 	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, fontColor = ccORANGE})
 	textButton:setPosition(ccp(VisibleRect.center().x, 150))

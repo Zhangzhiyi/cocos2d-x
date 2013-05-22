@@ -16,9 +16,25 @@ require "luascript/widget/TableView"
 require "luascript/widget/StyleLabelGroup"
 require "luascript/widget/Spinner"
 require "luascript/platform/PlatformBase"
-require "luascript/platform/PlatformAndroid"
-require "luascript/platform/PlatformIphone"
-require "luascript/platform/PlatformWin"
+
+--全局数据
+Global = {}
+--当前平台/系统
+Global.platformType = kTargetWindows --kTargetWindows or kTargetAndroid or ...
+Global.platform = nil
+
+--初始化
+function Global.InitGlobal()
+	local sharedApplication = CCApplication:sharedApplication()
+	Global.platformType = sharedApplication:getTargetPlatform()
+	if Global.platformType == kTargetWindows then
+		Global.platform = (require "luascript/platform/PlatformWin").new()
+	elseif Global.platformType == kTargetAndroid then
+		Global.platform = (require "luascript/platform/PlatformAndroid").new()
+	elseif Global.platformType == kTargetIphone then
+		Global.platform = (require "luascript/platform/PlatformIphone").new()
+	end		
+end
 
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)
@@ -27,7 +43,6 @@ function __G__TRACKBACK__(msg)
     print(debug.traceback())
     print("----------------------------------------")
 end
-Global = {}
 function Global.CreateTestSceneMan()
     return (require "luascript/scene/TestSceneMan").new()
 end
@@ -35,6 +50,8 @@ local function main()
     -- avoid memory leak
     collectgarbage("setpause", 100)
     collectgarbage("setstepmul", 5000)
+	
+	Global.InitGlobal()	
 	
 	local url = "http://httpbin.org/ip"
 	local function callback(event)
