@@ -14,6 +14,18 @@
     <Filter Include="Classes\network">
       <UniqueIdentifier>{3f21073b-a9a6-4257-a735-9617ab2c8d98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\cocos2dx_support\luaj">
+      <UniqueIdentifier>{caa60b78-4829-493f-9de8-039c8c8c2e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proj.android">
+      <UniqueIdentifier>{3e286f9a-5a94-4f0e-a620-85370a4ce496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proj.android\jni">
+      <UniqueIdentifier>{32b67b1b-883f-479d-9f5d-b1ff022c384a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proj.android\jni\hellolua">
+      <UniqueIdentifier>{a93b39a2-d345-4580-87cb-cb1863697ea5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\TestLuaWidget.ico">
@@ -104,6 +116,12 @@
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.h">
       <Filter>Classes\cocos2dx_support</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\luaj\com_qeeplay_frameworks_LuaJavaBridge.h">
+      <Filter>Classes\cocos2dx_support\luaj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\luaj\LuaJavaBridge.h">
+      <Filter>Classes\cocos2dx_support\luaj</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -147,6 +165,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.cpp">
       <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\luaj\com_qeeplay_frameworks_LuaJavaBridge.cpp">
+      <Filter>Classes\cocos2dx_support\luaj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\luaj\LuaJavaBridge.cpp">
+      <Filter>Classes\cocos2dx_support\luaj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\proj.android\jni\hellolua\main.cpp">
+      <Filter>proj.android\jni\hellolua</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

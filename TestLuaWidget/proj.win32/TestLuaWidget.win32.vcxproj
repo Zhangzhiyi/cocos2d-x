@@ -140,6 +140,12 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.h" />
     <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.h" />
+    <ClInclude Include="..\Classes\cocos2dx_support\luaj\com_qeeplay_frameworks_LuaJavaBridge.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\luaj\LuaJavaBridge.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\Classes\StyleLabel.h" />
     <ClInclude Include="..\Classes\ClipLayer.h" />
     <ClInclude Include="..\Classes\cocos2dx_extra.h" />
@@ -159,6 +165,12 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_extensions_luabinding.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_stylelabel_luabinding.cpp" />
+    <ClCompile Include="..\Classes\cocos2dx_support\luaj\com_qeeplay_frameworks_LuaJavaBridge.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\luaj\LuaJavaBridge.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\Classes\StyleLabel.cpp" />
     <ClCompile Include="..\Classes\ClipLayer.cpp" />
     <ClCompile Include="..\Classes\cocos2dx_support\CCLuaEngine.cpp" />
@@ -169,6 +181,9 @@
     <ClCompile Include="..\Classes\cocos2dx_support\tolua_fix.c" />
     <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp" />
     <ClCompile Include="..\Classes\network\CCNetwork.cpp" />
+    <ClCompile Include="..\proj.android\jni\hellolua\main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

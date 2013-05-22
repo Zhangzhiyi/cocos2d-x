@@ -1,24 +1,24 @@
-require "functions"
-require "UITools"
-require "VisibleRect"
-require "platform/PlatformBase"
-require "widget/CCNodeExtend"
-require "widget/ContainerWidget"
-require "scene/StandardSceneMan"
-require "dialog/DialogLayerMan"
-require "widget/CheckBox"
-require "widget/CheckBoxGroup"
-require "widget/ImageButton"
-require "widget/TextButton"
-require "widget/ProgressBar"
-require "widget/ScrollView"
-require "widget/TableView"
-require "widget/StyleLabelGroup"
-require "widget/Spinner"
-require "platform/PlatformBase"
-require "platform/PlatformAndroid"
-require "platform/PlatformIphone"
-require "platform/PlatformWin"
+require "luascript/functions"
+require "luascript/UITools"
+require "luascript/VisibleRect"
+require "luascript/platform/PlatformBase"
+require "luascript/widget/CCNodeExtend"
+require "luascript/widget/ContainerWidget"
+require "luascript/scene/StandardSceneMan"
+require "luascript/dialog/DialogLayerMan"
+require "luascript/widget/CheckBox"
+require "luascript/widget/CheckBoxGroup"
+require "luascript/widget/ImageButton"
+require "luascript/widget/TextButton"
+require "luascript/widget/ProgressBar"
+require "luascript/widget/ScrollView"
+require "luascript/widget/TableView"
+require "luascript/widget/StyleLabelGroup"
+require "luascript/widget/Spinner"
+require "luascript/platform/PlatformBase"
+require "luascript/platform/PlatformAndroid"
+require "luascript/platform/PlatformIphone"
+require "luascript/platform/PlatformWin"
 
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)
@@ -29,7 +29,7 @@ function __G__TRACKBACK__(msg)
 end
 Global = {}
 function Global.CreateTestSceneMan()
-    return (require "scene/TestSceneMan").new()
+    return (require "luascript/scene/TestSceneMan").new()
 end
 local function main()
     -- avoid memory leak

@@ -46,7 +46,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
 
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("hello.lua");
+	#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+			LuaJavaBridge::luabindingOpen(pEngine->getLuaState());
+	#endif
+    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("luascript/hello.lua");
     pEngine->executeScriptFile(path.c_str());
 
     return true;

@@ -24,10 +24,15 @@ function TestSceneMan:ctor()
 	local function clickFunc()
 		CCLuaLog("ClickEvent")
 	end		
+	
     local button = ImageButton.new({normalSfName = "gong1.png", pressedSfName = "gong2.png", disabledSfName = "gong1a.png", onClickEvent = clickFunc})
 	button:setPosition(VisibleRect.center())	
 	button:setScale(2)
 	self._mainLayer:addChild(button._node)
+	local function update()
+		CCLuaLog("update")		
+	end
+	button:scheduleUpdateWithPriorityLua(update, 0)
 	
 	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, fontColor = ccORANGE})
 	textButton:setPosition(ccp(VisibleRect.center().x, 150))

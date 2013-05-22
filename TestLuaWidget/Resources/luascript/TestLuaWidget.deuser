@@ -25,15 +25,9 @@
       </breakpoint>
     </file>
     <file>
-      <filename>hello.lua</filename>
+      <filename>scene\TestSceneMan.lua</filename>
       <breakpoint>
-        <line>20</line>
-      </breakpoint>
-      <breakpoint>
-        <line>43</line>
-      </breakpoint>
-      <breakpoint>
-        <line>36</line>
+        <line>155</line>
       </breakpoint>
     </file>
   </files>
