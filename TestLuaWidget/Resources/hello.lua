@@ -52,6 +52,5 @@ local function main()
 	
 	local testSceneMan = Global.CreateTestSceneMan()
 	testSceneMan:run()
-end
-
+end	
 xpcall(main, __G__TRACKBACK__)
