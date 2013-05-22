@@ -30,5 +30,11 @@
         <line>155</line>
       </breakpoint>
     </file>
+    <file>
+      <filename>Global.lua</filename>
+      <breakpoint>
+        <line>73</line>
+      </breakpoint>
+    </file>
   </files>
 </project>

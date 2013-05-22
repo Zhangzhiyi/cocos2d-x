@@ -19,6 +19,9 @@
     <filename>dialog\DialogLayerMan.lua</filename>
   </file>
   <file>
+    <filename>Global.lua</filename>
+  </file>
+  <file>
     <filename>widget\ImageButton.lua</filename>
   </file>
   <file>
@@ -55,9 +58,9 @@
     <filename>functions.lua</filename>
   </file>
   <file>
-    <filename>hello.lua</filename>
+    <filename>dialog\jinengLayer.lua</filename>
   </file>
   <file>
-    <filename>dialog\jinengLayer.lua</filename>
+    <filename>luaj.lua</filename>
   </file>
 </project>

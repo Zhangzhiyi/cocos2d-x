@@ -77,6 +77,12 @@ end
 function CCNodeExtend:scheduleUpdateWithPriorityLua(nHandler,nPriority)
 	self._node:scheduleUpdateWithPriorityLua(nHandler, nPriority)
 end
+function CCNodeExtend:unscheduleUpdate()
+	self._node:unscheduleUpdate()
+end
+function CCNodeExtend:stopAllActions()
+	self._node:stopAllActions()
+end
 function CCNodeExtend:addChild(child, zOrder)
 	if zOrder then
 		self._layer:addChild(child, zOrder)
