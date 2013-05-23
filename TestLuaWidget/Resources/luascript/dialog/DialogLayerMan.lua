@@ -78,10 +78,15 @@ function DialogLayerMan:unregisterScriptTouchHandler()
 	self._mainLayer:setTouchEnabled(false)
 	self._mainLayer:unregisterScriptTouchHandler()
 end
---改变触摸优先级，重新注册
+--改变触摸优先级,重新注册,而且要延迟一帧注册才有效
 function DialogLayerMan:setLayerTouchPriority(nTouchPriority)
-	self:unregisterScriptTouchHandler()
-	self:registerScriptTouchHandler(false, nTouchPriority, true)
+	local function tick()
+		self._mainLayer:unscheduleUpdate()
+		self:unregisterScriptTouchHandler()
+		self:registerScriptTouchHandler(false, nTouchPriority, true)
+	end
+	self._mainLayer:scheduleUpdateWithPriorityLua(tick, 0)	
+	
 end	
 function DialogLayerMan:isTouchInside(x, y)
 	local bBox = self._mainLayer:getViewRect()
