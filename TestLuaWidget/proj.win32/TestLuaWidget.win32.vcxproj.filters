@@ -77,18 +77,6 @@
     <ClInclude Include="..\Classes\ClipLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\cocos2dx_support\CCLuaEngine.h">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.h">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\cocos2dx_support\tolua_fix.h">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\cocos2dx_support\LuaCocos2d.h">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\network\CCHTTPRequest.h">
       <Filter>Classes\network</Filter>
     </ClInclude>
@@ -132,18 +120,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\ClipLayer.cpp">
       <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\cocos2dx_support\CCLuaEngine.cpp">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\cocos2dx_support\Cocos2dxLuaLoader.cpp">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\cocos2dx_support\tolua_fix.c">
-      <Filter>Classes\cocos2dx_support</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\cocos2dx_support\LuaCocos2d.cpp">
-      <Filter>Classes\cocos2dx_support</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\network\CCHTTPRequest.cpp">
       <Filter>Classes\network</Filter>

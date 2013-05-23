@@ -12,14 +12,10 @@ LOCAL_SRC_FILES := hellolua/main.cpp \
 		   ../../Classes/StyleLabel.cpp   \
 		   ../../Classes/network/CCHTTPRequest.cpp   \
 		   ../../Classes/network/CCNetwork.cpp   \
-		   ../../Classes/cocos2dx_support/CCLuaEngine.cpp   \
 		   ../../Classes/cocos2dx_support/cocos2dx_cliplayer_luabinding.cpp   \
 		   ../../Classes/cocos2dx_support/cocos2dx_network_luabinding.cpp   \
 		   ../../Classes/cocos2dx_support/cocos2dx_stylelabel_luabinding.cpp   \
 		   ../../Classes/cocos2dx_support/cocos2dx_extensions_luabinding.cpp   \
-		   ../../Classes/cocos2dx_support/Cocos2dxLuaLoader.cpp   \
-		   ../../Classes/cocos2dx_support/LuaCocos2d.cpp   \
-		   ../../Classes/cocos2dx_support/tolua_fix.c   \
 		   ../../Classes/cocos2dx_support/luaj/LuaJavaBridge.cpp   \
 		   ../../Classes/cocos2dx_support/luaj/com_qeeplay_frameworks_LuaJavaBridge.cpp   \
 

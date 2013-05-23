@@ -3,7 +3,10 @@
 #include "AppDelegate.h"
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
-
+#include "cocos2dx_support/cocos2dx_cliplayer_luabinding.h"
+#include "cocos2dx_support/cocos2dx_extensions_luabinding.h"
+#include "cocos2dx_support/cocos2dx_network_luabinding.h"
+#include "cocos2dx_support/cocos2dx_stylelabel_luabinding.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "cocos2dx_support/luaj/LuaJavaBridge.h"
 #endif
@@ -49,7 +52,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     // register lua engine
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-	
+	luaopen_cocos2dx_extensions_luabinding(pEngine->getLuaStack()->getLuaState());
+	luaopen_cocos2dx_network_luabinding(pEngine->getLuaStack()->getLuaState());
+	luaopen_cocos2dx_cliplayer_luabinding(pEngine->getLuaStack()->getLuaState());
+	luaopen_cocos2dx_stylelabel_luabinding(pEngine->getLuaStack()->getLuaState());
 	#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 			LuaJavaBridge::luabindingOpen(pEngine->getLuaStack()->getLuaState());
 	#endif
