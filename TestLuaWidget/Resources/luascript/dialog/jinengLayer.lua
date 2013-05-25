@@ -1,11 +1,11 @@
  local jinengLayer = class("jinengLayer", DialogLayerMan)
 
-function jinengLayer:ctor(standardSceneMan)
-	jinengLayer.super.ctor(self, standardSceneMan, "jinengLayer")
+function jinengLayer:ctor(options)
+	jinengLayer.super.ctor(self, options)
 	local background = CCSprite:createWithSpriteFrameName("background2.png")
 	background:setAnchorPoint(CCPointZero)	
-	self._mainLayer:addChild(background)
-	self._mainLayer:setViewSize(background:getContentSize())
+	self:addChild(background)
+	self:setViewSize(background:getContentSize())
 end
 
 return jinengLayer

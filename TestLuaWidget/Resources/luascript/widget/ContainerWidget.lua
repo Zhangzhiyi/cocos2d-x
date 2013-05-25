@@ -3,6 +3,8 @@ ContainerWidget = class ("ContainerWidget", CCNodeExtend)
 	控件容器类
 					key					描述  						类型
 	options	= 	{
+					bEnabled			是否可用					booleans
+					
 					bClipingAble		是否能够剪切部分可见		booleans
 					viewSize			剪切部分大小				CCSize
 				}					

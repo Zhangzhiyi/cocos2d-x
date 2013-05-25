@@ -39,16 +39,16 @@ function TestSceneMan:ctor()
 	self._mainLayer:addChild(textButton._node)
 	
 	local function beibaoCilckFunc()
-		self.dialog = (require "luascript/dialog/BeibaoLayer").new(self)
-		self.dialog:setPosition(ccp(100, 100))
+		self.dialog = (require "luascript/dialog/BeibaoLayer").new({standardSceneMan = self, strDialogTitle = "BeibaoLayer"})
+		self.dialog:setPosition(VisibleRect.center())
 	end
 	local beibaoBtn = ImageButton.new({normalSfName = "beibao1.png", pressedSfName = "beibao2.png", onClickEvent = beibaoCilckFunc})
 	beibaoBtn:setPosition(ccp(100, 100))
 	self._mainLayer:addChild(beibaoBtn._node)
 	
 	local function jinengCilckFunc()
-		self.dialog = (require "luascript/dialog/jinengLayer").new(self)
-		self.dialog:setPosition(ccp(200, 200))
+		self.dialog = (require "luascript/dialog/jinengLayer").new({standardSceneMan = self, strDialogTitle = "BeibaoLayer"})
+		self.dialog:setPosition(ccp(VisibleRect.center().x + 100, VisibleRect.center().y + 100))
 	end
 	local jinengBtn = ImageButton.new({normalSfName = "jineng1.png", pressedSfName = "jineng2.png", onClickEvent = jinengCilckFunc})
 	jinengBtn:setPosition(ccp(700, 200))

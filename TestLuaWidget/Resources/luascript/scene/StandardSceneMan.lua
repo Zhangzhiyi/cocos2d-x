@@ -97,11 +97,11 @@ end
 function StandardSceneMan:reorderDialog(dialog)
 	for i,v in ipairs(self._dialogList) do
 		if v == dialog then		
-			v:setLayerTouchPriority(kCCMenuHandlerPriority - 1)
-			self._mainScene:reorderChild(v._mainLayer, INT_MAX)
+			v:setTouchPriority(kCCMenuHandlerPriority - 1)
+			self._mainScene:reorderChild(v._node, INT_MAX)
 		else 
-			v:setLayerTouchPriority(kCCMenuHandlerPriority)
-			self._mainScene:reorderChild(v._mainLayer, INT_MAX - 1)
+			v:setTouchPriority(kCCMenuHandlerPriority)
+			self._mainScene:reorderChild(v._node, INT_MAX - 1)
 		end
 	end
 end

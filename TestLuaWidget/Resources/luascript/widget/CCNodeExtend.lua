@@ -55,30 +55,46 @@ end
 function CCNodeExtend:isTouchEnabled()
 	self._layer:isTouchEnabled()
 end
-function CCNodeExtend:setTouchPriority(nPriority)
-	if self:isTouchEnabled() then
-		self._layer:setTouchPriority(nPriority)
-	end		
+--改变触摸优先级,重新注册,而且要延迟一帧注册才有效
+function CCNodeExtend:setTouchPriority(nTouchPriority)
+	local function tick()
+		self._layer:unscheduleUpdate()
+		self:unregisterScriptTouchHandler()
+		self:registerScriptTouchHandler(nTouchPriority, true)
+		self:setTouchEnabled(true)
+	end
+	self._layer:scheduleUpdateWithPriorityLua(tick, 0)	
+	
 end
-function CCNodeExtend:registerScriptTouchHandler(nTouchPriority, bSwallowsTouches)
-	local function onTouch(eventType, x, y)
-        if eventType == "began" then
-            return self:onTouchBegan(x, y)
-        elseif eventType == "moved" then
-            return self:onTouchMoved(x, y)
-        elseif  eventType == "ended" then
-            return self:onTouchEnded(x, y)
-		elseif eventType == "cancelled" then						
-			return self:onTouchCancelled(x, y)
-        end
-    end
+function CCNodeExtend:registerScriptTouchHandler(nTouchPriority, bSwallowsTouches, onTouch)
+	if not onTouch then
+		onTouch = function(eventType, x, y)
+			if eventType == "began" then
+				return self:onTouchBegan(x, y)
+			elseif eventType == "moved" then
+				return self:onTouchMoved(x, y)
+			elseif  eventType == "ended" then
+				return self:onTouchEnded(x, y)
+			elseif eventType == "cancelled" then						
+				return self:onTouchCancelled(x, y)
+			end
+		end
+	end	
 	self._layer:registerScriptTouchHandler(onTouch, false, nTouchPriority, bSwallowsTouches)
+	
+end
+function CCNodeExtend:unregisterScriptTouchHandler()
+	self._layer:setTouchEnabled(false)
+	self._layer:unregisterScriptTouchHandler()
 end
 function CCNodeExtend:scheduleUpdateWithPriorityLua(nHandler,nPriority)
 	self._node:scheduleUpdateWithPriorityLua(nHandler, nPriority)
 end
 function CCNodeExtend:unscheduleUpdate()
 	self._node:unscheduleUpdate()
+end
+function CCNodeExtend:runAction(action)
+	self._node:runAction(action)
 end
 function CCNodeExtend:stopAllActions()
 	self._node:stopAllActions()
@@ -143,6 +159,18 @@ function CCNodeExtend:setScaleY(nScaleY)
 end	
 function CCNodeExtend:getScaleY()
 	self._node:getScaleY()
+end
+function CCNodeExtend:getAbsoluteVisible()		
+	local parent = self._node:getParent()
+	while parent do
+		local visible = parent:isVisible()
+		if visible then
+			parent = parent:getParent()
+		else 
+			return false
+		end
+	end
+	return true
 end
 function CCNodeExtend:removeFromParentAndCleanup(bCleanup)
     self._node:removeFromParentAndCleanup(bCleanup)

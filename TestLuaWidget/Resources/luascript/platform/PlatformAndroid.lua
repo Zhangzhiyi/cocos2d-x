@@ -1,4 +1,4 @@
--- androidƽ̨
+-- android平台
 local luaj = require "luascript/luaj"
 local CLASS_NAME= "org/cocos2dx/hellolua/HelloLua"
 local PlatformAndroid = class("PlatformAndroid", PlatformBase)

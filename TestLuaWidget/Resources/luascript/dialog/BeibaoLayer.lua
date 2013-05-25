@@ -1,18 +1,20 @@
 local BeibaoLayer = class("BeibaoLayer", DialogLayerMan)
 
-function BeibaoLayer:ctor(standardSceneMan)
-	BeibaoLayer.super.ctor(self, standardSceneMan, "BeibaoLayer")
+function BeibaoLayer:ctor(options)
+	BeibaoLayer.super.ctor(self, options)
+	
 	local background = CCSprite:createWithSpriteFrameName("background1.png")
 	background:setAnchorPoint(CCPointZero)	
-	self._mainLayer:addChild(background)
-	self._mainLayer:setViewSize(background:getContentSize())
+	self:addChild(background)
+	self:setViewSize(background:getContentSize())
 	
 	local function haoyouClickFunc()
-		print("ClickEvent")
+		CCLuaLog("ClickEvent")
+		self:setVisible(false)
 	end
-	local haoyouBtn = ImageButton.new({normalSfName = "haoyou1.png", pressedSfName = "haoyou2.png", clickEvent = haoyouClickFunc})
+	local haoyouBtn = ImageButton.new({normalSfName = "haoyou1.png", pressedSfName = "haoyou2.png", onClickEvent = haoyouClickFunc, nTouchPriority = -300})
 	haoyouBtn:setPosition(ccp(background:getContentSize().width/2, background:getContentSize().height/2))
-	self._mainLayer:addChild(haoyouBtn._node)
+	background:addChild(haoyouBtn._node)
 end
 
 return BeibaoLayer

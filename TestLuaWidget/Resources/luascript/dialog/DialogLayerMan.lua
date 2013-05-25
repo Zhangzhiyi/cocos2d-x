@@ -1,104 +1,48 @@
 kDialogHandlerPriority = kCCMenuHandlerPriority - 1
-DialogLayerMan = class("DialogLayerMan")
--- 设置ccmenu的优先级比对话框优先级要高
-function DialogLayerMan.setSuperDialogPriority( ccmenu, nPriority )
-	nPriority = nPriority or kDialogHandlerPriority -1
-    ccmenu:registerScriptHandler(
-	    function ( event )
-	        if event.name == "enter" then
-	            ccmenu._updateEntry = CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(
-                    function()
-                        ccmenu:setHandlerPriority(nPriority)
-                        if ccmenu._updateEntry ~= nil then
-                            CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(ccmenu._updateEntry)
-                            ccmenu._updateEntry = nil
-                        end
-                    end
-                    , 0, false)
-	            --ccmenu:setHandlerPriority(kDialogHandlerPriority-1)
-	        elseif event.name == "exit" then
-	            if ccmenu._updateEntry ~= nil then
-                    CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(ccmenu._updateEntry)
-                end
-	        end
-    	end
-    )
-end
-function DialogLayerMan:createSuperMenu()
-	local menu = CCMenu:create()
-	DialogLayerMan.setSuperDialogPriority(menu, self._menuPriority)
-	return menu
-end
-function DialogLayerMan:ctor( standardSceneMan, strTitle, bAutoFadeIn)
-	--self._mainLayer = CCLayer:create()--CCLayerColor:create(ccc4(0,0,0,0))-- CCLayer:create()	
-	self._mainLayer = ClipLayer:create()
-	self._mainLayer:ignoreAnchorPointForPosition(false)
-	self._mainLayer:setAnchorPoint(CCPointZero)
+DialogLayerMan = class("DialogLayerMan", ContainerWidget)
+--[[
+						key					描述  						类型
+	options	= 	{
+					bEnabled				是否可用					booleans
+					
+					bClipingAble			是否能够剪切部分可见		booleans
+					viewSize				剪切部分大小				CCSize
+					
+					standardSceneMan		附属场景类					StandardSceneMan
+					bAutoFadeIn				是否运行渐现动画			booleans
+					strDialogTitle			描述						string	
+				}
+--]]
+function DialogLayerMan:ctor(options)
 	
-	self._strTitle = strTitle or "DialogLayerMan"
+	DialogLayerMan.super.ctor(self, options)
+	self._standardSceneMan = options.standardSceneMan
+	self._strDialogTitle = options.strDialogTitle or "DialogLayerMan"
 	if bAutoFadeIn == nil then
 		bAutoFadeIn = true
 	end
 	if bAutoFadeIn then
-		self._mainLayer:runAction( CCFadeTo:create( 0.3, 166 ) )
+		self:runAction( CCFadeTo:create( 0.3, 166 ) )
 	end
-	self._standardSceneMan = standardSceneMan
+			
+	self:registerScriptHandler()	
+	self._standardSceneMan._mainScene:addChild(self._node, INT_MAX )	
+end
+function DialogLayerMan:onEnter()
+	self._standardSceneMan:registerDialog( self )
+	--注册触摸事件
+	self:registerScriptTouchHandler(kDialogHandlerPriority, true)
+	self:setTouchEnabled(true)
 	
-    local function handler ( event )
-        if event == "enter" then
-            self:onEnterLayer()
-        elseif event == "exit" then
-            self:onExitLayer()
-        end
-    end
-	self._mainLayer:registerScriptHandler( handler)	
-		
-	self._standardSceneMan._mainScene:addChild( self._mainLayer, INT_MAX )	
 end
-function DialogLayerMan:setPosition(point)
-	self._mainLayer:setPosition(point)
-end
-function DialogLayerMan:registerScriptTouchHandler(bMultiTouches, nTouchPriority, bSwallows)
-	--self._menuPriority = self._standardSceneMan:getNewDialogPriority() - 1
-	local function onTouch(eventType, x, y)
-        if eventType == "began" then
-            return self:onTouchBegan(x, y)
-        elseif eventType == "moved" then
-            return self:onTouchMoved(x, y)
-        elseif  eventType == "ended" then
-            return self:onTouchEnded(x, y)
-		elseif eventType == "cancelled" then						
-			return self:onTouchCancelled(x, y)
-        end
-    end		
-	self._mainLayer:registerScriptTouchHandler( onTouch, bMultiTouches, nTouchPriority, bSwallows)
-	self._mainLayer:setTouchEnabled(true)
-end
-function DialogLayerMan:unregisterScriptTouchHandler()
-	self._mainLayer:setTouchEnabled(false)
-	self._mainLayer:unregisterScriptTouchHandler()
-end
---改变触摸优先级,重新注册,而且要延迟一帧注册才有效
-function DialogLayerMan:setLayerTouchPriority(nTouchPriority)
-	local function tick()
-		self._mainLayer:unscheduleUpdate()
-		self:unregisterScriptTouchHandler()
-		self:registerScriptTouchHandler(false, nTouchPriority, true)
-	end
-	self._mainLayer:scheduleUpdateWithPriorityLua(tick, 0)	
-	
-end	
-function DialogLayerMan:isTouchInside(x, y)
-	local bBox = self._mainLayer:getViewRect()
-	local touchLocation = self._mainLayer:convertToWorldSpace(self._mainLayer:convertToNodeSpace(ccp(x, y)))
-	local bInside = bBox:containsPoint(touchLocation)
-	return bInside
-end
+function DialogLayerMan:onExit()
+	self._standardSceneMan:unregisterDialog( self )
+end					
 function DialogLayerMan:onTouchBegan(x, y)
 	
 	local bInside = self:isTouchInside(x, y)
 	if bInside then
-	    CCLuaLog(self._strTitle .. ":onTouchBegan")
+	    CCLuaLog(self._strDialogTitle .. ":onTouchBegan")
 		self._standardSceneMan:reorderDialog(self)
 	end		
 	return bInside
@@ -112,17 +56,8 @@ end
 function DialogLayerMan:onTouchCancelled(x, y)
 
 end
-function DialogLayerMan:onEnterLayer()
-	self._standardSceneMan:registerDialog( self )
-	--注册触摸事件
-	self:registerScriptTouchHandler(false, kDialogHandlerPriority, true)
-	
-end
-function DialogLayerMan:onExitLayer()
-	self._standardSceneMan:unregisterDialog( self )
-end
 function DialogLayerMan:close()
-	self._mainLayer:removeFromParentAndCleanup( true )
+	self:removeFromParentAndCleanup(true)
 end
 function DialogLayerMan:onKeyBackClicked()
 	self:close()

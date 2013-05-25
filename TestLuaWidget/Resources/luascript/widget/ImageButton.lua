@@ -63,7 +63,7 @@ function ImageButton:setPressed(bPressed)
 	end
 end
 function ImageButton:onTouchBegan(x, y)
-	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:isTouchInside(x, y)))then
+	if ((not self:isEnabled()) or (not self:isVisible()) or (not self:getAbsoluteVisible()) or (not self:isTouchInside(x, y)))then
 		return false
 	end
     --CCLuaLog("onTouchBegan isTouchInside")
