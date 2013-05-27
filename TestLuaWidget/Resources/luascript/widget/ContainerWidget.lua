@@ -1,12 +1,12 @@
 ContainerWidget = class ("ContainerWidget", CCNodeExtend)
 --[[
-	¿Ø¼şÈİÆ÷Àà
-					key					ÃèÊö  						ÀàĞÍ
+	æ§ä»¶å®¹å™¨ç±»
+					key					æè¿°  						ç±»å‹
 	options	= 	{
-					bEnabled			ÊÇ·ñ¿ÉÓÃ					booleans
+					bEnabled			æ˜¯å¦å¯ç”¨					booleans
 					
-					bClipingAble		ÊÇ·ñÄÜ¹»¼ôÇĞ²¿·Ö¿É¼û		booleans
-					viewSize			¼ôÇĞ²¿·Ö´óĞ¡				CCSize
+					bClipingAble		æ˜¯å¦èƒ½å¤Ÿå‰ªåˆ‡éƒ¨åˆ†å¯è§		booleans
+					viewSize			å‰ªåˆ‡éƒ¨åˆ†å¤§å°				CCSize
 				}					
 --]]
 function ContainerWidget:ctor(options)
@@ -50,9 +50,9 @@ function ContainerWidget:getViewRect()
 	return self._layer:getViewRect()
 end
 --[[
-	ÈİÆ÷ÀïChildNodes´¹Ö±ÅÅÁĞ
+	å®¹å™¨é‡ŒChildNodeså‚ç›´æ’åˆ—
 	params:	
-		nPadding	childNodeÖ®¼äµÄ¼äÏ¶£¬Ä¬ÈÏÎª5
+		nPadding	childNodeä¹‹é—´çš„é—´éš™ï¼Œé»˜è®¤ä¸º5
 --]]
 function ContainerWidget:alignItemsVertically(nPadding)
 	nPadding = nPadding or 5
@@ -87,9 +87,9 @@ function ContainerWidget:alignItemsVertically(nPadding)
 	self:setContentSize(CCSize(maxWidth, nTotalHeight))		
 end
 --[[
-	ÈİÆ÷ÀïChildNodesÆ½ĞĞÅÅÁĞ
+	å®¹å™¨é‡ŒChildNodeså¹³è¡Œæ’åˆ—
 	params:	
-		nPadding	childNodeÖ®¼äµÄ¼äÏ¶£¬Ä¬ÈÏÎª5
+		nPadding	childNodeä¹‹é—´çš„é—´éš™ï¼Œé»˜è®¤ä¸º5
 --]]
 function ContainerWidget:alignItemsHorizontally(nPadding)
 	nPadding = nPadding or 5

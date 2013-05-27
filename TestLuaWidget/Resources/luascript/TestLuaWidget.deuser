@@ -21,19 +21,7 @@
     <file>
       <filename>widget\ProgressBar.lua</filename>
       <breakpoint>
-        <line>86</line>
-      </breakpoint>
-    </file>
-    <file>
-      <filename>scene\TestSceneMan.lua</filename>
-      <breakpoint>
-        <line>155</line>
-      </breakpoint>
-    </file>
-    <file>
-      <filename>Global.lua</filename>
-      <breakpoint>
-        <line>73</line>
+        <line>79</line>
       </breakpoint>
     </file>
   </files>

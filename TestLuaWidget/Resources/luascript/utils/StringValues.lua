@@ -12,4 +12,4 @@ local function createStringValue(values)
 	return StringValue.new({stringValue = values})
 end
 
-StringValues.AppName = createStringValue({"English", "ÖÐÎÄ"})
+StringValues.AppName = createStringValue({"English", "ä¸­æ–‡"})

@@ -34,7 +34,7 @@ function TestSceneMan:ctor()
 	end
 	--button:scheduleUpdateWithPriorityLua(update, 0)
 	
-	local textButton = TextButton.new({strLabel = "TextButton", onClickEvent = clickFunc, fontColor = ccORANGE})
+	local textButton = TextButton.new({strLabel = StringValues.AppName:getString(), onClickEvent = clickFunc, fontColor = ccORANGE})
 	textButton:setPosition(ccp(VisibleRect.center().x, 150))
 	self._mainLayer:addChild(textButton._node)
 	

@@ -1,16 +1,16 @@
 TextButton = class("TextButton", CCNodeExtend)
 
 --[[
-		ÎÄ×Ö°´Å¥
-					key				ÃèÊö  							ÀàĞÍ
-	options = {	nFontSize			×ÖÌå´óĞ¡						number
-				fontName			×ÖÌåÃû×Ö						string
-				fontColor			×ÖÌåÑÕÉ«						ccColor3B
-				strLabel			ÏÔÊ¾µÄ×Ö·û´®					string				
-				bEnabled			ÊÇ·ñ¿ÉÓÃ						booleans
-				onClickEvent		µã»÷ºóµÄ»Øµ÷·½·¨				function
-				nScale				µã»÷Ëõ·ÅÏµÊı					number
-				nTouchPriority		´¥ÃşÊÂ¼şÓÅÏÈ¼¶					number
+		æ–‡å­—æŒ‰é’®
+					key				æè¿°  							ç±»å‹
+	options = {	nFontSize			å­—ä½“å¤§å°						number
+				fontName			å­—ä½“åå­—						string
+				fontColor			å­—ä½“é¢œè‰²						ccColor3B
+				strLabel			æ˜¾ç¤ºçš„å­—ç¬¦ä¸²					string				
+				bEnabled			æ˜¯å¦å¯ç”¨						booleans
+				onClickEvent		ç‚¹å‡»åçš„å›è°ƒæ–¹æ³•				function
+				nScale				ç‚¹å‡»ç¼©æ”¾ç³»æ•°					number
+				nTouchPriority		è§¦æ‘¸äº‹ä»¶ä¼˜å…ˆçº§					number
 			  }
 				
 --]]

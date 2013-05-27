@@ -1,23 +1,23 @@
 CCNodeExtend = class("CCNodeExtend")
 
 --[[
-	¿Ø¼ş»ùÀà
-					key					ÃèÊö  						ÀàĞÍ
+	æ§ä»¶åŸºç±»
+					key					æè¿°  						ç±»å‹
 	options	= 	{
-					bEnabled			ÊÇ·ñ¿ÉÓÃ						booleans
+					bEnabled			æ˜¯å¦å¯ç”¨						booleans
 				}					
 --]]
 function CCNodeExtend:ctor(options)
 	self._node = CCNode:create()
     self._layer = CCLayer:create()
     self._node:addChild(self._layer)
-	--ÉèÖÃÄ¬ÈÏÃªµãÎª(0.5£¬ 0.5)
-	--[[µ±CCNodeÃ»ÓĞÉèÖÃContentSizeµÄÊ±ºò,Ä¬ÈÏµÄContentSizeÊÇ(0, 0),
-	µ±ContentSizeÊÇ(0, 0)µÄÊ±ºò£¬¸Ä±äÃªµãÊÇÃ»ÓĞĞ§¹ûµÄ£¬ÕâÖÖÇé¿ö¿ÉÒÔ½«CCNode¿´³ÉÊÇÒ»¸öµã--]]
+	--è®¾ç½®é»˜è®¤é”šç‚¹ä¸º(0.5ï¼Œ 0.5)
+	--[[å½“CCNodeæ²¡æœ‰è®¾ç½®ContentSizeçš„æ—¶å€™,é»˜è®¤çš„ContentSizeæ˜¯(0, 0),
+	å½“ContentSizeæ˜¯(0, 0)çš„æ—¶å€™ï¼Œæ”¹å˜é”šç‚¹æ˜¯æ²¡æœ‰æ•ˆæœçš„ï¼Œè¿™ç§æƒ…å†µå¯ä»¥å°†CCNodeçœ‹æˆæ˜¯ä¸€ä¸ªç‚¹--]]
 	self:setAnchorPoint(CCPoint05)	
 	
-	--enableÄ¬ÈÏÎªtrue
-	--×¢Òâ£ºself._bEnabled = options.bEnabled or true ,µ±options.bEnabledÎªfalseµÄÊ±ºò£¬»¹ÊÇ·µ»Øtrue£¬´íÎó
+	--enableé»˜è®¤ä¸ºtrue
+	--æ³¨æ„ï¼šself._bEnabled = options.bEnabled or true ,å½“options.bEnabledä¸ºfalseçš„æ—¶å€™ï¼Œè¿˜æ˜¯è¿”å›trueï¼Œé”™è¯¯
 	if options then
 		if options.bEnabled ~= nil then
 			self._bEnabled = options.bEnabled
@@ -55,7 +55,7 @@ end
 function CCNodeExtend:isTouchEnabled()
 	self._layer:isTouchEnabled()
 end
---¸Ä±ä´¥ÃşÓÅÏÈ¼¶,ÖØĞÂ×¢²á,¶øÇÒÒªÑÓ³ÙÒ»Ö¡×¢²á²ÅÓĞĞ§
+--æ”¹å˜è§¦æ‘¸ä¼˜å…ˆçº§,é‡æ–°æ³¨å†Œ,è€Œä¸”è¦å»¶è¿Ÿä¸€å¸§æ³¨å†Œæ‰æœ‰æ•ˆ
 function CCNodeExtend:setTouchPriority(nTouchPriority)
 	local function tick()
 		self._layer:unscheduleUpdate()

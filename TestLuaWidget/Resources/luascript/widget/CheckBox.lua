@@ -1,15 +1,15 @@
 CheckBox = class("CheckBox", CCNodeExtend)
 --[[   
-		¿ª¹Ø°´Å¥¿Ø¼ş
-							key				ÃèÊö  									ÀàĞÍ
+		å¼€å…³æŒ‰é’®æ§ä»¶
+							key				æè¿°  									ç±»å‹
 	optiongs = 	{
-					onEnSfName				Ñ¡ÖĞ×´Ì¬¿ÉÓÃµÄSpriteFrameName			string
-					offEnSfName				Ã»Ñ¡ÖĞ×´Ì¬¿ÉÓÃµÄSpriteFrameName			string
-					onDisSfName				Ñ¡ÖĞ×´Ì¬²»¿ÉÓÃµÄSpriteFrameName			string
-					offDisSfName			Ã»Ñ¡ÖĞ×´Ì¬²»¿ÉÓÃµÄSpriteFrameName		string
-					bChecked				Ä¬ÈÏÊÇ·ñÑ¡ÖĞ×´Ì¬						booleans
-					onCheckEvent			×´Ì¬¸Ä±äµÄ»Øµ÷·½·¨						function
-					nTouchPriority			´¥ÃşÊÂ¼şÓÅÏÈ¼¶							number
+					onEnSfName				é€‰ä¸­çŠ¶æ€å¯ç”¨çš„SpriteFrameName			string
+					offEnSfName				æ²¡é€‰ä¸­çŠ¶æ€å¯ç”¨çš„SpriteFrameName			string
+					onDisSfName				é€‰ä¸­çŠ¶æ€ä¸å¯ç”¨çš„SpriteFrameName			string
+					offDisSfName			æ²¡é€‰ä¸­çŠ¶æ€ä¸å¯ç”¨çš„SpriteFrameName		string
+					bChecked				é»˜è®¤æ˜¯å¦é€‰ä¸­çŠ¶æ€						booleans
+					onCheckEvent			çŠ¶æ€æ”¹å˜çš„å›è°ƒæ–¹æ³•						function
+					nTouchPriority			è§¦æ‘¸äº‹ä»¶ä¼˜å…ˆçº§							number
 				}
 	
  --]]
@@ -27,7 +27,7 @@ function CheckBox:ctor(options)
     self._sprite = CCSprite:create()       
     self:updateState()
     		
-    --Òª×¢ÒâµÄÊÇself._spriteºÍself._labelÒªÔÚself._layer×ø±êÏµÄÚ£¬²»ÒªÔÙ¸ºÊı×ø±êÁË£¬·ñÔòÅĞ¶ÏÅö×²²»×¼
+    --è¦æ³¨æ„çš„æ˜¯self._spriteå’Œself._labelè¦åœ¨self._layeråæ ‡ç³»å†…ï¼Œä¸è¦å†è´Ÿæ•°åæ ‡äº†ï¼Œå¦åˆ™åˆ¤æ–­ç¢°æ’ä¸å‡†
     self._sprite:setPosition(self._sprite:getContentSize().width/2, self._sprite:getContentSize().height/2)
     self._layer:addChild(self._sprite)
     self._label:setAnchorPoint(ccp(0, 0.5))

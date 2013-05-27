@@ -1,11 +1,11 @@
 ProgressBar = class("ProgressBar", CCNodeExtend)
 --[[
-	½ø¶ÈÌõ¿Ø¼şÀà
-					key					ÃèÊö  						ÀàĞÍ
+	è¿›åº¦æ¡æ§ä»¶ç±»
+					key					æè¿°  						ç±»å‹
 	optiongs = 	{
-					backgroundSprite	±³¾°SpriteFrameName			string
-					progressSprite		½ø¶ÈÌõSpriteFrameName		string
-					nPercent			Ä¬ÈÏµÄ½ø¶ÈÖµ(0 ~ 1)			number
+					backgroundSprite	èƒŒæ™¯SpriteFrameName			string
+					progressSprite		è¿›åº¦æ¡SpriteFrameName		string
+					nPercent			é»˜è®¤çš„è¿›åº¦å€¼(0 ~ 1)			number
 				}
 --]]
 function ProgressBar:ctor(options)

@@ -1,14 +1,14 @@
 ImageButton = class("ImageButton", CCNodeExtend)
 --[[
-		Í¼Æ¬°´Å¥
-					key				ÃèÊö  							ÀàĞÍ
+		å›¾ç‰‡æŒ‰é’®
+					key				æè¿°  							ç±»å‹
 	options = {	
-				bEnabled			ÊÇ·ñ¿ÉÓÃ						booleans
-				normalSfName		Õı³£×´Ì¬SpriteFrameName			string
-				pressedSfName		°´ÏÂ×´Ì¬SpriteFrameName			string
-				disabledSfName		²»¿ÉÓÃ×´Ì¬SpriteFrameName		string				
-				onClickEvent		µã»÷ºóµÄ»Øµ÷·½·¨				function
-				nTouchPriority		´¥ÃşÊÂ¼şÓÅÏÈ¼¶					number
+				bEnabled			æ˜¯å¦å¯ç”¨						booleans
+				normalSfName		æ­£å¸¸çŠ¶æ€SpriteFrameName			string
+				pressedSfName		æŒ‰ä¸‹çŠ¶æ€SpriteFrameName			string
+				disabledSfName		ä¸å¯ç”¨çŠ¶æ€SpriteFrameName		string				
+				onClickEvent		ç‚¹å‡»åçš„å›è°ƒæ–¹æ³•				function
+				nTouchPriority		è§¦æ‘¸äº‹ä»¶ä¼˜å…ˆçº§					number
 			  }
 				
 --]]

@@ -1,3 +1,4 @@
+
 require "luascript/functions"
 require "luascript/UITools"
 require "luascript/VisibleRect"
@@ -18,15 +19,15 @@ require "luascript/widget/Spinner"
 require "luascript/platform/PlatformBase"
 require "luascript/utils/StringValues"
 
---È«¾ÖÊı¾İ
+--å…¨å±€æ•°æ®
 Global = {}
---µ±Ç°Æ½Ì¨/ÏµÍ³
+--å½“å‰å¹³å°/ç³»ç»Ÿ
 Global.platformType = kTargetWindows --kTargetWindows or kTargetAndroid or ...
 Global.platform = nil
---µ±Ç°ÓïÑÔ,Ä¬ÈÏÊÇÓ¢ÎÄ
-Global.languageType = kLanguageEnglish
+--å½“å‰è¯­è¨€,é»˜è®¤æ˜¯è‹±æ–‡
+Global.languageType = kLanguageChinese --kLanguageEnglish or kLanguageChinese
 
---³õÊ¼»¯
+--åˆå§‹åŒ–
 function Global.InitGlobal()
 	local sharedApplication = CCApplication:sharedApplication()
 	Global.platformType = sharedApplication:getTargetPlatform()
@@ -38,13 +39,13 @@ function Global.InitGlobal()
 		Global.platform = (require "luascript/platform/PlatformIphone").new()
 	end		
 end
---»ñÈ¡µ±Ç°ÏµÍ³ÓïÑÔ
+--è·å–å½“å‰ç³»ç»Ÿè¯­è¨€
 function Global.getCurrentLanguage()
 	local languageType = CCApplication:sharedApplication():getCurrentLanguage()
 	Global.languageType = languageType
 	return languageType
 end
---ÉèÖÃµ±Ç°Ê¹ÓÃµÄÓïÑÔ
+--è®¾ç½®å½“å‰ä½¿ç”¨çš„è¯­è¨€
 function Global.setCurrentLanguage(languageType)
 	Global.languageType = languageType
 end
@@ -75,7 +76,7 @@ local function main()
 	Global.InitGlobal()	
 	CCLuaLog(StringValues.AppName:getString())
 	
-	--²âÊÔhttpÇëÇó£¬´òÓ¡·µ»ØÊı¾İ
+	--æµ‹è¯•httpè¯·æ±‚ï¼Œæ‰“å°è¿”å›æ•°æ®
 	local url = "http://httpbin.org/ip"
 	local function callback(event)
 		local request = event.request

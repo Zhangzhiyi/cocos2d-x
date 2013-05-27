@@ -1,16 +1,16 @@
 Spinner = class("Spinner", CCNodeExtend)
 --[[
-	ÏÂÀ­ÁĞ±í¿Ø¼şÀà
-						key					ÃèÊö  									ÀàĞÍ
+	ä¸‹æ‹‰åˆ—è¡¨æ§ä»¶ç±»
+						key					æè¿°  									ç±»å‹
 	optiongs = 	{
-					bEnabled				ÊÇ·ñ¿ÉÓÃ								booleans
-					normalSfName			Õı³£×´Ì¬SpriteFrameName					string
-					pressedSfName			°´ÏÂ×´Ì¬SpriteFrameName					string
-					disabledSfName			²»¿ÉÓÃ×´Ì¬SpriteFrameName				string
-					nTouchPriority			´¥ÃşÊÂ¼şÓÅÏÈ¼¶							number
-					values					ÏÂÀ­ÁĞ±íÏÔÊ¾µÄ×Ö·û´®Êı×é				table
-					nSelect					Ä¬ÈÏÑ¡ÖĞµÄ×Ö·û´®Êı×éÏÂ±ê				number
-					onValueChangeEvent		µã»÷ÏÂÀ­ÁĞ±í¸Ä±äÑ¡ÖĞÏîÊÂ¼ş»Øµ÷·½·¨		function
+					bEnabled				æ˜¯å¦å¯ç”¨								booleans
+					normalSfName			æ­£å¸¸çŠ¶æ€SpriteFrameName					string
+					pressedSfName			æŒ‰ä¸‹çŠ¶æ€SpriteFrameName					string
+					disabledSfName			ä¸å¯ç”¨çŠ¶æ€SpriteFrameName				string
+					nTouchPriority			è§¦æ‘¸äº‹ä»¶ä¼˜å…ˆçº§							number
+					values					ä¸‹æ‹‰åˆ—è¡¨æ˜¾ç¤ºçš„å­—ç¬¦ä¸²æ•°ç»„				table
+					nSelect					é»˜è®¤é€‰ä¸­çš„å­—ç¬¦ä¸²æ•°ç»„ä¸‹æ ‡				number
+					onValueChangeEvent		ç‚¹å‡»ä¸‹æ‹‰åˆ—è¡¨æ”¹å˜é€‰ä¸­é¡¹äº‹ä»¶å›è°ƒæ–¹æ³•		function
 					
 				}
 --]]

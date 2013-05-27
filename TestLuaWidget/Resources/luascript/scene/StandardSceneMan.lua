@@ -1,5 +1,5 @@
 StandardSceneMan = class("StandardSceneMan")
---¹¹Ôìº¯Êı
+--æ„é€ å‡½æ•°
 function StandardSceneMan:ctor()
 	
 	self._mainScene = CCScene:create()
@@ -30,7 +30,7 @@ function StandardSceneMan:LOGD( ... )
     LOGD( self.classname, ... )
 end
 
---Ö÷³¡¾°½øÈë
+--ä¸»åœºæ™¯è¿›å…¥
 function StandardSceneMan:onEnterMainScene()
 	CCDirector:sharedDirector():purgeCachedData()
     local function tick()
@@ -38,7 +38,7 @@ function StandardSceneMan:onEnterMainScene()
     end
     self._updateEntry = CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(tick, 0, false)
 end
---Ö÷³¡¾°ÍË³ö
+--ä¸»åœºæ™¯é€€å‡º
 function StandardSceneMan:onExitMainScene()
 	if self._updateEntry then
 	    CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self._updateEntry)
@@ -56,7 +56,7 @@ end
 function StandardSceneMan:replace()
     CCDirector:sharedDirector():replaceScene(self._mainScene)
 end
---Ã¿Ö¡¸üĞÂ
+--æ¯å¸§æ›´æ–°
 function StandardSceneMan:update()
    
 end
@@ -69,7 +69,7 @@ function StandardSceneMan:keyBackCloseLastDialog()
 	end
 	return false
 end	
--- ·µ»Ø¼üÏìÓ¦
+-- è¿”å›é”®å“åº”
 function StandardSceneMan:onKeyBackClicked()
 	if not self:keyBackCloseLastDialog() then
 		CCDirector:sharedDirector():endToLua()
@@ -84,7 +84,7 @@ function StandardSceneMan:onKeyBackClicked()
 		self.dialog = Global.createAlertDialog(self, {strMessage = GameLangs.dialog_exitGame:getLang(), isHasBtn1 = true, func1 = func1, isHasBtn2 = true})--]]
 	end
 end
--- »ñµÃ¶Ô»°¿òµÄ×îĞÂÓÅÏÈ¼¶
+-- è·å¾—å¯¹è¯æ¡†çš„æœ€æ–°ä¼˜å…ˆçº§
 function StandardSceneMan:getNewDialogPriority()
 	if #self._dialogList > 0 then
 		self._nDialogPriority = self._nDialogPriority - 1
@@ -105,11 +105,11 @@ function StandardSceneMan:reorderDialog(dialog)
 		end
 	end
 end
--- ×¢²á¶Ô»°¿ò
+-- æ³¨å†Œå¯¹è¯æ¡†
 function StandardSceneMan:registerDialog( dialog )
 	table.insert( self._dialogList, dialog)
 end
--- ×¢Ïú¶Ô»°¿ò
+-- æ³¨é”€å¯¹è¯æ¡†
 function StandardSceneMan:unregisterDialog( dialog )
     local idx = 0
     for i,v in ipairs(self._dialogList) do

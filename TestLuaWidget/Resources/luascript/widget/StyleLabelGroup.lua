@@ -1,16 +1,16 @@
 StyleLabelGroup = class("StyleLabelGroup", ContainerWidget)
 --[[
-	¸»ÎÄ±¾¿Ø¼ş
-  styleLabels = { key        				ÃèÊö          				ÀàĞÍ
-				{strLabel          			ÏÔÊ¾µÄÎÄ×Ö      			string,
-				 fontName     				×ÖÌåÃû×Ö        			string,
-				 nFontSize     				×ÖÌå´óĞ¡  	  				number,
-				 fontColor					×ÖÌåÑÕÉ«					ccColor3B,
-				 bDrawBottomLine			ÊÇ·ñ»­ÏÂ»®Ïß				booleans,
-				 nLineWidth              	ÏÂ»®Ïß¿í¶È      			number,				
-				 lineColor					ÏÂ»®ÏßÑÕÉ«					ccColor4F,
-				 bPerformClickEnable      	ÊÇ·ñ¿ÉÒÔµã»÷   				booleans,
-				 styleLabelClickFunc     	µã»÷»Øµ÷·½·¨   				Function,
+	å¯Œæ–‡æœ¬æ§ä»¶
+  styleLabels = { key        				æè¿°          				ç±»å‹
+				{strLabel          			æ˜¾ç¤ºçš„æ–‡å­—      			string,
+				 fontName     				å­—ä½“åå­—        			string,
+				 nFontSize     				å­—ä½“å¤§å°  	  				number,
+				 fontColor					å­—ä½“é¢œè‰²					ccColor3B,
+				 bDrawBottomLine			æ˜¯å¦ç”»ä¸‹åˆ’çº¿				booleans,
+				 nLineWidth              	ä¸‹åˆ’çº¿å®½åº¦      			number,				
+				 lineColor					ä¸‹åˆ’çº¿é¢œè‰²					ccColor4F,
+				 bPerformClickEnable      	æ˜¯å¦å¯ä»¥ç‚¹å‡»   				booleans,
+				 styleLabelClickFunc     	ç‚¹å‡»å›è°ƒæ–¹æ³•   				Function,
 				 }
 			}
 --]]

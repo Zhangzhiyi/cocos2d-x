@@ -1,16 +1,16 @@
 kDialogHandlerPriority = kCCMenuHandlerPriority - 1
 DialogLayerMan = class("DialogLayerMan", ContainerWidget)
 --[[
-						key					ÃèÊö  						ÀàĞÍ
+						key					æè¿°  						ç±»å‹
 	options	= 	{
-					bEnabled				ÊÇ·ñ¿ÉÓÃ					booleans
+					bEnabled				æ˜¯å¦å¯ç”¨					booleans
 					
-					bClipingAble			ÊÇ·ñÄÜ¹»¼ôÇĞ²¿·Ö¿É¼û		booleans
-					viewSize				¼ôÇĞ²¿·Ö´óĞ¡				CCSize
+					bClipingAble			æ˜¯å¦èƒ½å¤Ÿå‰ªåˆ‡éƒ¨åˆ†å¯è§		booleans
+					viewSize				å‰ªåˆ‡éƒ¨åˆ†å¤§å°				CCSize
 					
-					standardSceneMan		¸½Êô³¡¾°Àà					StandardSceneMan
-					bAutoFadeIn				ÊÇ·ñÔËĞĞ½¥ÏÖ¶¯»­			booleans
-					strDialogTitle			ÃèÊö						string	
+					standardSceneMan		é™„å±åœºæ™¯ç±»					StandardSceneMan
+					bAutoFadeIn				æ˜¯å¦è¿è¡Œæ¸ç°åŠ¨ç”»			booleans
+					strDialogTitle			æè¿°						string	
 				}
 --]]
 function DialogLayerMan:ctor(options)
@@ -30,7 +30,7 @@ function DialogLayerMan:ctor(options)
 end
 function DialogLayerMan:onEnter()
 	self._standardSceneMan:registerDialog( self )
-	--×¢²á´¥ÃşÊÂ¼ş
+	--æ³¨å†Œè§¦æ‘¸äº‹ä»¶
 	self:registerScriptTouchHandler(kDialogHandlerPriority, true)
 	self:setTouchEnabled(true)
 	

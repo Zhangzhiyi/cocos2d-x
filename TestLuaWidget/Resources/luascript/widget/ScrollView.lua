@@ -1,12 +1,12 @@
 ScrollView = class("ScrollView", ContainerWidget)
 --[[
-	¿É»¬¶¯ÈİÆ÷Àà
-						key					ÃèÊö  							ÀàĞÍ
+	å¯æ»‘åŠ¨å®¹å™¨ç±»
+						key					æè¿°  							ç±»å‹
 	optiongs = 	{	
-					nDirection			»¬¶¯·½Ïò(Ä¬ÈÏÎª´¹Ö±·½Ïò)			number
-					viewSize			¿ÉÊÓ²¿·Ö´°¿Ú´óĞ¡					CCSize
-					bBounceable			ÊÇ·ñÓĞµ¯ĞÔĞ§¹û						booleans
-					nTouchPriority		´¥ÃşÊÂ¼şÓÅÏÈ¼¶						number
+					nDirection			æ»‘åŠ¨æ–¹å‘(é»˜è®¤ä¸ºå‚ç›´æ–¹å‘)			number
+					viewSize			å¯è§†éƒ¨åˆ†çª—å£å¤§å°					CCSize
+					bBounceable			æ˜¯å¦æœ‰å¼¹æ€§æ•ˆæœ						booleans
+					nTouchPriority		è§¦æ‘¸äº‹ä»¶ä¼˜å…ˆçº§						number
 				}
 --]]
 

@@ -1,27 +1,27 @@
 TableView = class("TableView", ScrollView)
 --[[
-	TableView¡–±Ìøÿº˛¿‡
-					key							√Ë ˆ  								¿‡–Õ
+	TableViewÂàóË°®Êéß‰ª∂Á±ª
+					key							ÊèèËø∞  								Á±ªÂûã
 	optiongs = 	{	
-					nDirection					ª¨∂Ø∑ΩœÚ(ƒ¨»œŒ™¥π÷±∑ΩœÚ)			number
-					viewSize					ø… ”≤ø∑÷¥∞ø⁄¥Û–°					CCSize
-					bBounceable					 «∑Ò”–µØ–‘–ßπ˚						booleans
-					nTouchPriority				¥•√˛ ¬º˛”≈œ»º∂						number
+					nDirection					ÊªëÂä®ÊñπÂêë(ÈªòËÆ§‰∏∫ÂûÇÁõ¥ÊñπÂêë)			number
+					viewSize					ÂèØËßÜÈÉ®ÂàÜÁ™óÂè£Â§ßÂ∞è					CCSize
+					bBounceable					ÊòØÂê¶ÊúâÂºπÊÄßÊïàÊûú						booleans
+					nTouchPriority				Ëß¶Êë∏‰∫ã‰ª∂‰ºòÂÖàÁ∫ß						number
 					
-					numberOfCellsFunc			∑µªÿ¡–±Ì∏ˆ ˝Ω”ø⁄					function
-					cellSizeForIndexFunc		∑µªÿ¡–±Ìœ¬±ÍµƒCCSizeΩ”ø⁄			function
-					tableCellAtIndexFunc		∑µªÿ¡–±Ìœ¬±ÍµƒCellΩ”ø⁄				function
-					tableCellHighlightFunc		¥•√˛µ±«∞¡–±ÌœÓœ‘ æ∏ﬂ¡¡µƒΩ”ø⁄		function
-					tableCellUnhighlightFunc	∏ﬂ¡¡µƒ¡–±ÌœÓ±‰Œ™≤ª∏ﬂ¡¡µƒΩ”ø⁄		function
-					tableCellTouchedFunc		µ„ª˜µ±«∞¡–±ÌœÓµƒ¥•∑¢ ¬º˛Ω”ø⁄		function
+					numberOfCellsFunc			ËøîÂõûÂàóË°®‰∏™Êï∞Êé•Âè£					function
+					cellSizeForIndexFunc		ËøîÂõûÂàóË°®‰∏ãÊ†áÁöÑCCSizeÊé•Âè£			function
+					tableCellAtIndexFunc		ËøîÂõûÂàóË°®‰∏ãÊ†áÁöÑCellÊé•Âè£				function
+					tableCellHighlightFunc		Ëß¶Êë∏ÂΩìÂâçÂàóË°®È°πÊòæÁ§∫È´ò‰∫ÆÁöÑÊé•Âè£		function
+					tableCellUnhighlightFunc	È´ò‰∫ÆÁöÑÂàóË°®È°πÂèò‰∏∫‰∏çÈ´ò‰∫ÆÁöÑÊé•Âè£		function
+					tableCellTouchedFunc		ÁÇπÂáªÂΩìÂâçÂàóË°®È°πÁöÑËß¶Âèë‰∫ã‰ª∂Êé•Âè£		function
 				}	
 --]]
 function TableView:ctor(options)
 	TableView.super.ctor(self, options)
 	
-	self._cells = {} --¥Ê¥¢À˘”–cellµƒ±Ì
-	self._cellPosition = {} --¥Ê¥¢√ø“ª∏ˆcellµƒŒª÷√±Ì
-	self._touchCell = nil --¥Ê¥¢¥•√˛—°÷–µƒcell
+	self._cells = {} --Â≠òÂÇ®ÊâÄÊúâcellÁöÑË°®
+	self._cellPosition = {} --Â≠òÂÇ®ÊØè‰∏Ä‰∏™cellÁöÑ‰ΩçÁΩÆË°®
+	self._touchCell = nil --Â≠òÂÇ®Ëß¶Êë∏ÈÄâ‰∏≠ÁöÑcell
 	
 	self._numberOfCellsFunc = options.numberOfCellsFunc
 	self._cellSizeForIndexFunc = options.cellSizeForIndexFunc	
@@ -83,7 +83,7 @@ function TableView:checkNodeVisibleInParent()
 	end
 end
 function TableView:isNodeVisible(node)
-	--local offset = self:getContentOffset() --Œ™ ≤√¥µ˜”√getPosition()∑µªÿnil
+	--local offset = self:getContentOffset() --‰∏∫‰ªÄ‰πàË∞ÉÁî®getPosition()ËøîÂõûnil
 	local viewSize = self:getViewSize()
 	local posX = self._container:getPositionX()
 	local posY = self._container:getPositionY()
@@ -119,7 +119,7 @@ function TableView:indexFromOffset(offset)
 	end
 	return index
 end
-function TableView:halfFindIndex(hight, low, search) --∂˛∑÷≤È’“
+function TableView:halfFindIndex(hight, low, search) --‰∫åÂàÜÊü•Êâæ
 	while (hight >= low) do
 		local mid = low + math.floor((hight - low)/2)
 		local cellStart = self._cellPosition[mid]
@@ -148,7 +148,7 @@ function TableView:cellSizeForIndex(index)
 end
 function TableView:tableCellAtIndex(index)
 	local existCell = self._cells[index]
-	-- «∑Ò“—æ≠¥Ê‘⁄
+	--ÊòØÂê¶Â∑≤ÁªèÂ≠òÂú®
 	if existCell then
 		return existCell
 	end
@@ -195,7 +195,7 @@ function TableView:reloadData()
 	for i = 1, cellsCount do
 		self:updateCellAtIndex(i)
 	end
-	--self:checkNodeVisibleInParent() --ø®À¿£¨“™”≈ªØ
+	--self:checkNodeVisibleInParent() --Âç°Ê≠ªÔºåË¶Å‰ºòÂåñ
 end
 function TableView:onTouchBegan(x, y)
 	if (not self:isVisible()) or (not self:isTouchInside(x, y))then
@@ -215,7 +215,7 @@ function TableView:onTouchBegan(x, y)
 end
 function TableView:onTouchMoved(x, y)
 	TableView.super.onTouchMoved(self, x, y)
-	--self:checkNodeVisibleInParent() -- ø®À¿¡À	
+	--self:checkNodeVisibleInParent() -- Âç°Ê≠ª‰∫Ü	
 	
 	if self._touchCell and self:isTouchMoved() then
 		self:tableCellUnhighlight(self._touchCell)
