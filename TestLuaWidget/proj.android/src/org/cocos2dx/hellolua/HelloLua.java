@@ -47,7 +47,7 @@ public class HelloLua extends Cocos2dxActivity{
 	static {
         System.loadLibrary("hellolua");
     }
-	/**²âÊÔluaµ÷ÓÃjava·½·¨£¬ºóÃæ¸úµÄÊÇ²âÊÔ²ÎÊı**/
+	/**æµ‹è¯•luaè°ƒç”¨javaæ–¹æ³•ï¼Œåé¢è·Ÿçš„æ˜¯æµ‹è¯•å‚æ•°**/
 	public static String testLuaCallJava(int i, float f, boolean b1, boolean b2, String str){
 		return "Lua call Java function Successful!";
 	}
@@ -63,7 +63,7 @@ public class HelloLua extends Cocos2dxActivity{
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						//²âÊÔJavaµ÷ÓÃLuaµÄº¯Êı
+						//æµ‹è¯•Javaè°ƒç”¨Luaçš„å‡½æ•°
 						LuaJavaBridge.callLuaFunctionWithString(luaFunctionId, "java call lua successful!");
 						LuaJavaBridge.releaseLuaFunction(luaFunctionId);
 					}

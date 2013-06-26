@@ -35,9 +35,9 @@ public:
 	ccColor4F getLineColor(){return m_lineColor;}
 
 	/** Register menu handler script function */
-	virtual void registerScriptClickHandler(int nHandler);
-	virtual void unregisterScriptClickHandler(void);
-	int getScriptClickHandler() { return m_nScriptClickHandler; };
+	//virtual void registerScriptClickHandler(int nHandler);
+	//virtual void unregisterScriptClickHandler(void);
+	//int getScriptClickHandler() { return m_nScriptClickHandler; };
 private:
 	int m_nTouchPriority;
 	bool m_bTouchEnabled;

@@ -112,6 +112,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestMemoryMan.win32", "Test
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexasHoldEm.win32", "E:\TexasHoldEm\trunk\src\client\TexasHoldEm.win32.vcxproj", "{DC54980A-2A53-4199-BE93-D7CE8029E1EF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCCDictionary.win32", "TestCCDictionary\proj.win32\TestCCDictionary.win32.vcxproj", "{51C8EC46-A7FD-41D0-85FE-54FE82460733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -214,6 +216,10 @@ Global
 		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Debug|Win32.Build.0 = Debug|Win32
 		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Release|Win32.ActiveCfg = Release|Win32
 		{DC54980A-2A53-4199-BE93-D7CE8029E1EF}.Release|Win32.Build.0 = Release|Win32
+		{51C8EC46-A7FD-41D0-85FE-54FE82460733}.Debug|Win32.ActiveCfg = Debug|Win32
+		{51C8EC46-A7FD-41D0-85FE-54FE82460733}.Debug|Win32.Build.0 = Debug|Win32
+		{51C8EC46-A7FD-41D0-85FE-54FE82460733}.Release|Win32.ActiveCfg = Release|Win32
+		{51C8EC46-A7FD-41D0-85FE-54FE82460733}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
