@@ -2,7 +2,9 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "cocos-ext.h"
 USING_NS_CC;
+USING_NS_CC_EXT;
 class HelloWorld : public cocos2d::CCLayer
 {
 public:
@@ -18,6 +20,9 @@ public:
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 	virtual void update(float dt);
+
+	void addScale9Sprite();
+	void addSprite();
 private:
 	CCArray* pArray;
 };

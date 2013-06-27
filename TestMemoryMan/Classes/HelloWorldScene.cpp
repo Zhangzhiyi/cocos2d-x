@@ -1,7 +1,6 @@
 #include "HelloWorldScene.h"
 
 using namespace cocos2d;
-
 CCScene* HelloWorld::scene()
 {
     CCScene * scene = NULL;
@@ -101,6 +100,12 @@ bool HelloWorld::init()
 		//pArray->autorelease();   //注意：autorelease()多次会出错
 		//想保留pArray对象要retain一遍，不然会给系统回收
 		pArray->retain();
+
+		for (int i = 0; i < 3000;  ++i)
+		{
+			//addScale9Sprite();
+			addSprite();
+		}
         bRet = true;
     } while (0);
 
@@ -115,4 +120,21 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
     // "close" menu item clicked
     CCDirector::sharedDirector()->end();
 }
+void HelloWorld::addScale9Sprite()
+{
+	CCSize s = CCDirector::sharedDirector()->getWinSize();
 
+	CCPoint p = ccp( CCRANDOM_0_1() * s.width, CCRANDOM_0_1() * s.height);
+	CCScale9Sprite* scaleSprite = CCScale9Sprite::create("redanniu_3.png");
+	scaleSprite->setPosition(p);
+	this->addChild(scaleSprite);
+}
+void HelloWorld::addSprite()
+{
+	CCSize s = CCDirector::sharedDirector()->getWinSize();
+
+	CCPoint p = ccp( CCRANDOM_0_1() * s.width, CCRANDOM_0_1() * s.height);
+	CCSprite* sprite = CCSprite::create("redanniu_3.png");
+	sprite->setPosition(p);
+	this->addChild(sprite);
+}
