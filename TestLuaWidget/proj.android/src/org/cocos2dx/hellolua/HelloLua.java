@@ -25,12 +25,12 @@ package org.cocos2dx.hellolua;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
-import com.qeeplay.frameworks.LuaJavaBridge;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.KeyEvent;
+
+import com.qeeplay.frameworks.LuaJavaBridge;
 
 public class HelloLua extends Cocos2dxActivity{
 	

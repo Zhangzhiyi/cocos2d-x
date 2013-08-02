@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 #include "ClipLayer.h"
-#include "CCStyleLabel.h"
+#include "BYGraySprite.h"
 USING_NS_CC;
 
 CCScene* HelloWorld::scene()
@@ -96,14 +96,10 @@ bool HelloWorld::init()
 		CCSprite* iconSprite = CCSprite::create("icon.png");
 		iconSprite->setPosition(ccp(clayer->getContentSize().width/2, clayer->getContentSize().height/2));
 		clayer->addChild(iconSprite, 2);
-
-		CCStyleLabel* styleLabel = CCStyleLabel::create("HelloWorld!", "Marker Felt", 24);
-		styleLabel->setIsTouch(true);
-		styleLabel->setTouchPriority(-129);
-		styleLabel->setPosition(ccp(clayer->getContentSize().width/2, clayer->getContentSize().height/2));
-		clayer->addChild(styleLabel, 2);
 		
-		
+		BYGraySprite* graySprite = BYGraySprite::create("icon.png");
+		graySprite->setPosition(ccp(200, 200));
+		this->addChild(graySprite);
         bRet = true;
     } while (0);
 

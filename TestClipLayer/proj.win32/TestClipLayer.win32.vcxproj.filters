@@ -8,9 +8,6 @@
       <UniqueIdentifier>{8386d80a-a945-4d18-a062-9ec50df7efd4}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
     </Filter>
-    <Filter Include="Classes\cliplayer">
-      <UniqueIdentifier>{5910d2b3-adf9-4e68-a631-fea63d8df815}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\TestClipLayer.ico">
@@ -50,10 +47,10 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ClipLayer.h">
-      <Filter>Classes\cliplayer</Filter>
+    <ClInclude Include="..\Classes\BYGraySprite.h">
+      <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CCStyleLabel.h">
+    <ClInclude Include="..\Classes\ClipLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,10 +64,10 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ClipLayer.cpp">
-      <Filter>Classes\cliplayer</Filter>
+    <ClCompile Include="..\Classes\BYGraySprite.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CCStyleLabel.cpp">
+    <ClCompile Include="..\Classes\ClipLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>

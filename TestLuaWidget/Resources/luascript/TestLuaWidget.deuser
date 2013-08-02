@@ -24,5 +24,14 @@
         <line>79</line>
       </breakpoint>
     </file>
+    <file>
+      <filename>scene\TestSceneMan.lua</filename>
+      <breakpoint>
+        <line>155</line>
+      </breakpoint>
+      <breakpoint>
+        <line>156</line>
+      </breakpoint>
+    </file>
   </files>
 </project>

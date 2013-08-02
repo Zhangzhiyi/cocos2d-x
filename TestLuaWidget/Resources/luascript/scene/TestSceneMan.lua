@@ -152,5 +152,9 @@ function TestSceneMan:ctor()
 	slider:setMaximumValue(100)
 	slider:setPosition(ccp(400, 50))
 	self._mainLayer:addChild(slider)
+	
+	local graySprite = BYGraySprite:createWithSpriteFrameName("xuanzhong.png");
+	graySprite:setPosition(ccp(200, 300));
+	self._mainLayer:addChild(graySprite);
 end
 return TestSceneMan

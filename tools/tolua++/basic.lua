@@ -193,6 +193,7 @@ local CCObjectTypes = {
     "ClipLayer",
     "CCStyleLabel",
     "CCHTTPRequest",
+    "BYGraySprite"
 }
 
 -- register CCObject types

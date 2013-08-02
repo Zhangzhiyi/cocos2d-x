@@ -1,0 +1,6 @@
+class BYGraySprite : public CCSprite
+{
+	static BYGraySprite* create(const char* pszFileName);
+	static BYGraySprite* createWithSpriteFrame(CCSpriteFrame *pSpriteFrame);
+	static BYGraySprite* createWithSpriteFrameName(const char *pszSpriteFrameName);
+};

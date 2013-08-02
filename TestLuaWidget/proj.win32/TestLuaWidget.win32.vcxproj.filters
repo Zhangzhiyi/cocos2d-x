@@ -110,6 +110,12 @@
     <ClInclude Include="..\Classes\cocos2dx_support\luaj\LuaJavaBridge.h">
       <Filter>Classes\cocos2dx_support\luaj</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\cocos2dx_support\cocos2dx_BYGraySprite_luabinding.h">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BYGraySprite.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -150,6 +156,12 @@
     </ClCompile>
     <ClCompile Include="..\proj.android\jni\hellolua\main.cpp">
       <Filter>proj.android\jni\hellolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos2dx_support\cocos2dx_BYGraySprite_luabinding.cpp">
+      <Filter>Classes\cocos2dx_support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BYGraySprite.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
